@@ -6,10 +6,15 @@ module.exports = {
 		title: 'foodmonk - Development Environment'
 	},
 	facebook: {
-		clientID: process.env.FACEBOOK_ID || 'APP_ID',
-		clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
-		callbackURL: '/auth/facebook/callback'
+		clientID: process.env.FACEBOOK_ID || '1606409169622638',
+		clientSecret: process.env.FACEBOOK_SECRET || '532ad9b2094c80883cc7e974a76a1532',
+		callbackURL: 'http://localhost:3000/auth/facebook/callback'
 	},
+	// facebook: {
+	// 	clientID: process.env.FACEBOOK_ID || 'APP_ID',
+	// 	clientSecret: process.env.FACEBOOK_SECRET || 'APP_SECRET',
+	// 	callbackURL: '/auth/facebook/callback'
+	// },
 	twitter: {
 		clientID: process.env.TWITTER_KEY || 'CONSUMER_KEY',
 		clientSecret: process.env.TWITTER_SECRET || 'CONSUMER_SECRET',

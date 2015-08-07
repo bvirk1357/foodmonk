@@ -13,6 +13,9 @@ var _ = require('lodash'),
  * Signup
  */
 exports.signup = function(req, res) {
+
+	console.log('\n\nInside users.auth.server.ctrl.js.signup()\n\n');
+
 	// For security measurement we remove the roles from the req.body object
 	delete req.body.roles;
 
@@ -24,7 +27,7 @@ exports.signup = function(req, res) {
 	user.provider = 'local';
 	user.displayName = user.firstName + ' ' + user.lastName;
 
-	// Then save the user 
+	// Then save the user
 	user.save(function(err) {
 		if (err) {
 			return res.status(400).send({
@@ -50,6 +53,9 @@ exports.signup = function(req, res) {
  * Signin after passport authentication
  */
 exports.signin = function(req, res, next) {
+
+	console.log('\n\nInside users.auth.server.ctrl.js.signin()\n\n');
+
 	passport.authenticate('local', function(err, user, info) {
 		if (err || !user) {
 			res.status(400).send(info);
@@ -82,14 +88,22 @@ exports.signout = function(req, res) {
  */
 exports.oauthCallback = function(strategy) {
 	return function(req, res, next) {
+		console.log(res)
 		passport.authenticate(strategy, function(err, user, redirectURL) {
+
+			console.log('\n\nInside users.auth.server.ctrl.js.oauthCallback(), err: ' + err + ', user: ' + user + '.\n\n');
+
 			if (err || !user) {
+				console.log('\n\nerr || !user\n\n');
 				return res.redirect('/#!/signin');
 			}
 			req.login(user, function(err) {
 				if (err) {
+					console.log('\n\nerr\n\n');
 					return res.redirect('/#!/signin');
 				}
+
+				console.log('\n\nlogin()\n\n');
 
 				return res.redirect(redirectURL || '/');
 			});
@@ -101,7 +115,13 @@ exports.oauthCallback = function(strategy) {
  * Helper function to save or update a OAuth user profile
  */
 exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
+
+	console.log('\n\nInside users.auth.server.ctrl.js.saveOAuthUserProfile()\n\n');
+
 	if (!req.user) {
+
+		console.log('\n\nInside users.auth.server.ctrl.js.saveOAuthUserProfile().if()\n\n');
+
 		// Define a search query fields
 		var searchMainProviderIdentifierField = 'providerData.' + providerUserProfile.providerIdentifierField;
 		var searchAdditionalProviderIdentifierField = 'additionalProvidersData.' + providerUserProfile.provider + '.' + providerUserProfile.providerIdentifierField;
@@ -149,6 +169,9 @@ exports.saveOAuthUserProfile = function(req, providerUserProfile, done) {
 			}
 		});
 	} else {
+
+		console.log('\n\nInside users.auth.server.ctrl.js.saveOAuthUserProfile().else()\n\n');
+
 		// User is already logged in, join the provider data to the existing user
 		var user = req.user;
 
