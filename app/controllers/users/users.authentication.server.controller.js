@@ -88,7 +88,7 @@ exports.signout = function(req, res) {
  */
 exports.oauthCallback = function(strategy) {
 	return function(req, res, next) {
-		console.log(res)
+
 		passport.authenticate(strategy, function(err, user, redirectURL) {
 
 			console.log('\n\nInside users.auth.server.ctrl.js.oauthCallback(), err: ' + err + ', user: ' + user + '.\n\n');
