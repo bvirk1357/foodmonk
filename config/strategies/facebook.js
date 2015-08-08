@@ -23,17 +23,21 @@ module.exports = function() {
 			providerData.accessToken = accessToken;
 			providerData.refreshToken = refreshToken;
 
+			console.log('\n\nInside facebook.js strategy file.\n\n');
+
 			// Create the user OAuth profile
-			var providerUserProfile = {
-				firstName: profile.name.givenName,
-				lastName: profile.name.familyName,
-				displayName: profile.displayName,
-				email: profile.emails[0].value,
-				username: profile.username,
-				provider: 'facebook',
-				providerIdentifierField: 'id',
-				providerData: providerData
-			};
+			// var providerUserProfile = {
+			// 	firstName: profile.name.givenName,
+			// 	lastName: profile.name.familyName,
+			// 	displayName: profile.displayName,
+			// 	email: profile.emails[0].value,
+			// 	username: profile.username,
+			// 	provider: 'facebook',
+			// 	providerIdentifierField: 'id',
+			// 	providerData: providerData
+			// };
+
+			console.log('\n\nInside facebook.js strategy file. Point 2.\n\n');
 
 			// Save the user OAuth profile
 			users.saveOAuthUserProfile(req, providerUserProfile, done);

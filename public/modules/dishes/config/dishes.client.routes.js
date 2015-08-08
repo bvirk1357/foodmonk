@@ -1,0 +1,17 @@
+'use strict';
+
+//Setting up route
+angular.module('dishes').config(['$stateProvider',
+	function($stateProvider) {
+		// Dishes state routing
+		$stateProvider.
+		state('create-dish', {
+			url: '/dishes/create',
+			templateUrl: 'modules/dishes/views/create-dish.client.view.html'
+		}).
+		state('dishes', {
+			url: '/dishes',
+			templateUrl: 'modules/dishes/views/dishes.client.view.html'
+		});
+	}
+]);
