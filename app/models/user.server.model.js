@@ -48,6 +48,16 @@ var UserSchema = new Schema({
 		validate: [validateLocalStrategyProperty, 'Please fill in your email'],
 		match: [/.+\@.+\..+/, 'Please fill a valid email address']
 	},
+	lat:{
+	  type: Number,
+	  default: 0,
+    trim: true
+  },
+  lon:{
+    type: Number,
+    default: 0,
+    trim: true
+  },
 	latlng: {
 		type: String,
 		default: '',
