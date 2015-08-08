@@ -1,3 +1,15 @@
-<section data-ng-controller="DishesController">
-	This is the Dishes view
+<section data-ng-controller="DishesController" data-ng-init="find()">
+	<div class="page-header">
+        <h1>Dishes</h1>
+    </div>
+    <div class="list-group">
+        <a data-ng-repeat="dish in dishes" data-ng-href="/dishes/{{dish._id}}" class="list-group-item">
+            <h4 class="list-group-item-heading" data-ng-bind="dish.name"></h4>
+            <span data-ng-bind="dish.description"></span>
+        </a>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!dishes.$resolved || dishes.length">
+        No dishes yet, why don't you <a href="/#!/dishes/create">create one</a>?
+    </div>
 </section>
+

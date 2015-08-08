@@ -25,9 +25,9 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
       });
   };
       $scope.find = function() {
+        console.log('Path hit');
         $scope.dishes = Dishes.query();
+        console.log('Dish made');
       };
-    }
-
 	}
 ]);

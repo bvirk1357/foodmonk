@@ -14,8 +14,6 @@ module.exports = function(app) {
 		.put(users.requiresLogin, dishes.hasAuthorization, dishes.update)
 		.delete(users.requiresLogin, dishes.hasAuthorization, dishes.delete);
 
-	app.route('/dishes/create_dish')
-		.post(users.requiresLogin, dishes.create);
 	// Finish by binding the Dish middleware
 	app.param('dishId', dishes.dishByID);
 };
