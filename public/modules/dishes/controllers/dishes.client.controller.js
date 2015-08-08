@@ -24,6 +24,10 @@ angular.module('dishes').controller('DishesController', ['$scope', '$location', 
         $scope.error = errorResponse.data.message;
       });
   };
+      $scope.find = function() {
+        $scope.dishes = Dishes.query();
+      };
+    }
 
 	}
 ]);
