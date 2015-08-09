@@ -49,6 +49,5 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
       console.log('$scope.dish: ' + $scope.dish + '.\n\n');
 
     };
-
 	}
 ]);
