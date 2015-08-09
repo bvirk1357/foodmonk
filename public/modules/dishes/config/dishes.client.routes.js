@@ -10,7 +10,7 @@ angular.module('dishes').config(['$stateProvider',
 			templateUrl: 'modules/dishes/views/create-dish.client.view.html'
 		}).
 		state('dishes', {
-			url: '/dishes',
+			url: '/dishes/:id',
 			templateUrl: 'modules/dishes/views/dishes.client.view.html'
 		});
 	}

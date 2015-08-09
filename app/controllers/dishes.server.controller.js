@@ -13,15 +13,19 @@ var mongoose = require('mongoose'),
  */
 exports.create = function(req, res) {
 	console.log('\n\n\nMade it to create\n\n');
+	console.log(req.body);
 	var dish = new Dish(req.body);
 	dish.user = req.user;
-
+	dish.username=req.user.username;
+	console.log('req.user:' + req.user);
 	dish.save(function(err) {
 		if (err) {
+			console.log('error');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('success');
 			res.jsonp(dish);
 		}
 	});
@@ -78,12 +82,15 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
 	console.log('\n\n\nMade it to list\n\n');
-	Dish.find().sort('-created').populate('user', 'displayName').exec(function(err, dishes) {
+	Dish.find({username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, dishes) {
+		console.log('dishes unaltered:' + dishes);
 		if (err) {
+			console.log('user123:' + req.user);
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('userk:' + req.user);
 			res.jsonp(dishes);
 		}
 	});
