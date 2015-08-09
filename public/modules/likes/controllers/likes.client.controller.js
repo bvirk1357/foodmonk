@@ -63,6 +63,7 @@ angular.module('likes').controller('LikesController', ['$scope', '$stateParams',
 		// Find a list of Likes
 		$scope.find = function() {
 			$scope.likes = Likes.query();
+			console.log('hey im here!!!!' + $scope.likes);
 		};
 
 		// Find existing Like

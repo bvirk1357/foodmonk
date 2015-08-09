@@ -5,9 +5,11 @@ angular.module('likes').factory('Likes', ['$resource',
 	function($resource) {
 		return $resource('likes/:likeId', { likeId: '@_id', name: '@name'
 		}, {
-			update: {
-				method: 'PUT'
-			}
+      'get':    {method:'GET'},
+      'save':   {method:'POST'},
+      'query':  {method:'GET', isArray:true},
+      'remove': {method:'DELETE'},
+      'delete': {method:'DELETE'}
 		});
 	}
 ]);

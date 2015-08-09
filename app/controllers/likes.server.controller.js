@@ -80,12 +80,14 @@ exports.delete = function(req, res) {
  * List of Likes
  */
 exports.list = function(req, res) {
-	Like.find().sort('-created').populate('user', 'displayName').exec(function(err, likes) {
+	Like.find({username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, likes) {
 		if (err) {
+			console.log('FUCK ERROR');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('hey Im also here!!!' + likes);
 			res.jsonp(likes);
 		}
 	});

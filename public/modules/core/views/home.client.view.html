@@ -12,3 +12,15 @@
 	<a data-ng-href="#!/dishes/create">Create a Dish</a>
 
 </section>
+
+<div data-ng-controller="LikesController" data-ng-init="find()">
+
+<p data-ng-repeat="like in likes">
+  {{like.name}}, {{like.dishname}}
+</p>
+
+</div>
+
+<div>
+
+</div>
