@@ -5,15 +5,24 @@ angular.module('likes').controller('LikesController', ['$scope', '$stateParams',
 	function($scope, $stateParams, $location, Authentication, Likes) {
 		$scope.authentication = Authentication;
 
+		$scope.liked = false;
+
 		// Create new Like
-		$scope.create = function() {
+		$scope.create = function(dishname) {
+
+			console.log('likes.client.controller.create(), dishname: ' + dishname + '\n');
+
 			// Create new Like object
 			var like = new Likes ({
-				name: this.name
+				dishname: dishname
 			});
 
 			// Redirect after save
 			like.$save(function(response) {
+
+				console.log('Liked this dish');
+
+				$scope.liked = true;
 				$location.path('likes/' + response._id);
 
 				// Clear form fields
@@ -25,7 +34,7 @@ angular.module('likes').controller('LikesController', ['$scope', '$stateParams',
 
 		// Remove existing Like
 		$scope.remove = function(like) {
-			if ( like ) { 
+			if ( like ) {
 				like.$remove();
 
 				for (var i in $scope.likes) {
@@ -58,7 +67,7 @@ angular.module('likes').controller('LikesController', ['$scope', '$stateParams',
 
 		// Find existing Like
 		$scope.findOne = function() {
-			$scope.like = Likes.get({ 
+			$scope.like = Likes.get({
 				likeId: $stateParams.likeId
 			});
 		};

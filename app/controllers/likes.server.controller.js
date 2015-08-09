@@ -12,15 +12,22 @@ var mongoose = require('mongoose'),
  * Create a Like
  */
 exports.create = function(req, res) {
+
+	console.log('\nlikes.server.ctrl.create, req.body: ' + req.body + '\n');
+
 	var like = new Like(req.body);
 	like.user = req.user;
+	like.username = req.user.username;
+	like.name = req.user.displayName;
 
 	like.save(function(err) {
 		if (err) {
+			console.log('\nERROR: likes.server.ctrl.create, err: ' + err + '\n');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('\nSUCCESS likes.server.ctrl.create, like: ' + like + '\n');
 			res.jsonp(like);
 		}
 	});
@@ -72,7 +79,7 @@ exports.delete = function(req, res) {
 /**
  * List of Likes
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
 	Like.find().sort('-created').populate('user', 'displayName').exec(function(err, likes) {
 		if (err) {
 			return res.status(400).send({
@@ -87,7 +94,7 @@ exports.list = function(req, res) {
 /**
  * Like middleware
  */
-exports.likeByID = function(req, res, next, id) { 
+exports.likeByID = function(req, res, next, id) {
 	Like.findById(id).populate('user', 'displayName').exec(function(err, like) {
 		if (err) return next(err);
 		if (! like) return next(new Error('Failed to load Like ' + id));

@@ -33,7 +33,7 @@ var ScheduleSchema = new Schema({
 	},
 	complete_status: {
 		type: Boolean,
-		default: false;
+		default: false,
 		trim: true
 	},
 	schedule_date: {

@@ -28,7 +28,7 @@ var ConfirmationSchema = new Schema({
 	},
 	confirm_status: {
 		type: Boolean,
-		default: false;
+		default: false,
 		trim: true
 	},
 	created: {

@@ -19,7 +19,8 @@ var LikeSchema = new Schema({
 	dishname: {
 		type: String,
 		default: '',
-		required: 'Please assign a dish name'
+		required: 'Please assign a dish name',
+		trim: true
 	},
 	username: {
 		type: String,

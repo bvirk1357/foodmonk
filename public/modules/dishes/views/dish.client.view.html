@@ -7,4 +7,13 @@
   <p>DishName: {{dish.name}}</p>
 
 
+  <!-- HACK FOR TESTING THE SCHEDULE FLOW -->
+  <!-- <a data-ng-href="#!/likes/create/{{dish.id}}">Like this Dish</a> -->
+  <div ng-controller="LikesController">
+    <button ng-click="create(dish.name)">Like this dish.</button>
+    <p ng-show="liked">You have liked this dish!</p>
+  </div>
+  <!-- HACK FOR TESTING THE SCHEDULE FLOW -->
+
+
 </section>

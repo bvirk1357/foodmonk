@@ -10,7 +10,7 @@ angular.module('likes').config(['$stateProvider',
 			templateUrl: 'modules/likes/views/list-likes.client.view.html'
 		}).
 		state('createLike', {
-			url: '/likes/create',
+			url: '/likes/create/:dishId',
 			templateUrl: 'modules/likes/views/create-like.client.view.html'
 		}).
 		state('viewLike', {
