@@ -10,9 +10,12 @@ module.exports = function(app) {
 		.post(users.requiresLogin, dishes.create);
 
 	app.route('/dishes/:dishId')
-		.get(dishes.read)
+		.get(dishes.dishByID)
 		.put(users.requiresLogin, dishes.hasAuthorization, dishes.update)
 		.delete(users.requiresLogin, dishes.hasAuthorization, dishes.delete);
+
+	app.route('/alldishes')
+		.get(dishes.listAll);
 
 	// Finish by binding the Dish middleware
 	app.param('dishId', dishes.dishByID);

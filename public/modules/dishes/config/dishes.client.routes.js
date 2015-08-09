@@ -12,6 +12,10 @@ angular.module('dishes').config(['$stateProvider',
 		state('dishes', {
 			url: '/dishes',
 			templateUrl: 'modules/dishes/views/dishes.client.view.html'
+		}).
+		state('dish', {
+			url: '/dishes/:id',
+			templateUrl: 'modules/dishes/views/dish.client.view.html'
 		});
 	}
 ]);
