@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/foodmonk-dev",
+	"dev": "localhost/foodmonk-dev",
+	"prod": "localhost/PROD_DB_NAME"
+}
