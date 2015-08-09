@@ -23,7 +23,7 @@ angular.module('likes').controller('LikesController', ['$scope', '$stateParams',
 				console.log('Liked this dish');
 
 				$scope.liked = true;
-				$location.path('likes/' + response._id);
+				// $location.path('likes/' + response._id);
 
 				// Clear form fields
 				$scope.name = '';
