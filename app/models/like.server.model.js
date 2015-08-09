@@ -16,6 +16,16 @@ var LikeSchema = new Schema({
 		required: 'Please fill Like name',
 		trim: true
 	},
+	dishname: {
+		type: String,
+		default: '',
+		required: 'Please assign a dish name'
+	},
+	username: {
+		type: String,
+		required: 'Please fill username',
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now

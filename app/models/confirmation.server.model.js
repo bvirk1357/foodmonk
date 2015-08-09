@@ -16,6 +16,21 @@ var ConfirmationSchema = new Schema({
 		required: 'Please fill Confirmation name',
 		trim: true
 	},
+	dishname: {
+		type: String,
+		default: '',
+		required: 'Please assign a dish name'
+	},
+	username: {
+		type: String,
+		required: 'Please fill username',
+		trim: true
+	},
+	confirm_status: {
+		type: Boolean,
+		default: false;
+		trim: true
+	},
 	created: {
 		type: Date,
 		default: Date.now

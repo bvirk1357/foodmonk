@@ -19,7 +19,8 @@ var DishSchema = new Schema({
 		type: String,
 		default: '',
 		required: 'Please fill Dish name',
-		trim: true
+		trim: true,
+		unique: true
 	},
 
 	pic: {
