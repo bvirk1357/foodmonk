@@ -31,5 +31,24 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
       console.log('test: ');
        $scope.dishes = Dishes.query();
     };
+
+
+    $scope.read = function() {
+      console.log('\n\nread: ');
+
+      var dishSrv = new Dishes({
+        _id: $stateParams.id
+      });
+
+      dishSrv.$get(function(response) {
+        $scope.dish = response;
+      }, function(errorResponse) {
+        $scope.error = errorResponse.data.message;
+      });
+
+      console.log('$scope.dish: ' + $scope.dish + '.\n\n');
+
+    };
+
 	}
 ]);

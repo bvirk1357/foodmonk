@@ -12,6 +12,7 @@ var mongoose = require('mongoose'),
 var DishSchema = new Schema({
 	username: {
 		type: String,
+		required: 'Please fill username',
 		trim: true
 	},
 	name: {
@@ -77,6 +78,14 @@ var DishSchema = new Schema({
 	user: {
 		type: Schema.ObjectId,
 		ref: 'User'
+	},
+	lat: {
+		type: Number,
+		default: 0
+	},
+	lng: {
+		type: Number,
+		default: 0
 	}
 });
 

@@ -34,9 +34,44 @@ exports.create = function(req, res) {
 /**
  * Show the current Dish
  */
-exports.read = function(req, res) {
+exports.read = function(req, res, id) {
 	console.log('\n\n\nMade it to read\n\n');
-	res.jsonp(req.dish);
+	// var ObjectId = mongoose.Types.ObjectId;
+	// var query = { '_id': new ObjectId(id) };
+	// Dish.find({'_id': ObjectId.fromString(id)}).exec(function(err, dish) {
+	// 	// if (err) return next(err);
+	// 	// if (! dish){
+	// 	// 	// return next(new Error('Failed to load Dish ' + id));
+	// 	// }
+	// 	// req.dish = dish;
+	// 	console.log('\ndish: ' + dish + '\n');
+	// 	res.jsonp(dish);
+	// });
+
+	Dish.findById(id).populate('user', 'displayName').exec(function(err, dish) {
+    if (err || !dish) {
+    	console.log('Crashed!: ' + err + '.\n');
+      return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+    } else { 
+    	console.log('\ndish: ' + dish + '\n');
+      res.jsonp(dish);
+    }
+	});
+
+  // Dish.findOne({ '_id' : new mongoose.Types.ObjectId(id) }, function(err, dish) {
+  //   if (err || !dish) {
+  //   	console.log('Crashed!: ' + err + '.\n');
+  //     return res.status(400).send({
+		// 		message: errorHandler.getErrorMessage(err)
+		// 	});
+  //   } else { 
+  //   	console.log('\ndish: ' + dish + '\n');
+  //     res.jsonp(dish);
+  //   }
+  // });
+
 };
 
 /**
@@ -97,15 +132,36 @@ exports.list = function(req, res) {
 };
 
 /**
+ * List of Dishe Locations
+ */
+exports.listAll = function(req, res) {
+	console.log('\n\n\nMade it to listAll\n\n');
+	Dish.find({}, {'name': 1, 'lat': 1, 'long': 1}).exec(function(err, allDishes) {
+		if (err) {
+			console.log("Error:" );
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(allDishes);
+		}
+	});
+};
+
+/**
  * Dish middleware
  */
 exports.dishByID = function(req, res, next, id) {
 	console.log('\n\n\nMade it to dishbyID\n\n');
 	Dish.findById(id).populate('user', 'displayName').exec(function(err, dish) {
 		if (err) return next(err);
-		if (! dish) return next(new Error('Failed to load Dish ' + id));
-		req.dish = dish ;
-		next();
+		if (! dish){
+			return next(new Error('Failed to load Dish ' + id));
+		}
+		// req.dish = dish;
+		console.log('\ndish: ' + dish + '\n');
+		// next();
+		res.jsonp(dish);
 	});
 };
 

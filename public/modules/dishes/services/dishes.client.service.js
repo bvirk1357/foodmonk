@@ -11,13 +11,4 @@ angular.module('dishes').factory('Dishes', ['$resource',
 		});
 	}
 
-  // function($resource) {
-  //       return $resource('dishes/:dishesId', { dishId: '@_id'
-  //       }, {
-  //           update: {
-  //               method: 'PUT'
-  //           }
-  //       });
-  //   }
-
 ]);
