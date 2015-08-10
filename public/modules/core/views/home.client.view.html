@@ -14,13 +14,14 @@
 </section>
 
 <div data-ng-controller="LikesController" data-ng-init="find()">
-
 <p data-ng-repeat="like in likes">
   {{like.name}}, {{like.dishname}}
 </p>
 
 </div>
 
-<div>
-
+<div data-ng-controller="SchedulesController" data-ng-init="find()">
+<p data-ng-repeat="schedule in schedules">
+  {{schedule.name}}, {{schedule.username}}, {{schedule.user_story}}
+</p>
 </div>

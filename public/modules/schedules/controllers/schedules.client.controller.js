@@ -25,7 +25,7 @@ angular.module('schedules').controller('SchedulesController', ['$scope', '$state
 
 		// Remove existing Schedule
 		$scope.remove = function(schedule) {
-			if ( schedule ) { 
+			if ( schedule ) {
 				schedule.$remove();
 
 				for (var i in $scope.schedules) {
@@ -54,11 +54,12 @@ angular.module('schedules').controller('SchedulesController', ['$scope', '$state
 		// Find a list of Schedules
 		$scope.find = function() {
 			$scope.schedules = Schedules.query();
+			console.log('hey schedule here' + $scope.schedules);
 		};
 
 		// Find existing Schedule
 		$scope.findOne = function() {
-			$scope.schedule = Schedules.get({ 
+			$scope.schedule = Schedules.get({
 				scheduleId: $stateParams.scheduleId
 			});
 		};
