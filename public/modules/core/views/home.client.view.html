@@ -1,16 +1,12 @@
 <section data-ng-controller="HomeController" data-ng-init="initiatePin()">
-
-  <map center="[37.784840, -122.397424]" zoom ='2' style="height: 500px">
-    <marker position="[37.784840, -122.397424]" visible="true"></marker>
-    <marker ng-repeat='latlng in disheslatlng' position='[{{latlng.lat}},{{latlng.long}}]' visible="true" on-click="gotolink(event,latlng)">
-    </marker>
-  </map>
-
+  <p> "The journey of a thousand miles begins with a single bite."</p>
+    <map center="[37.784840, -122.397424]" zoom ='2' style="height: 500px">
+      <marker position="[37.784840, -122.397424]" visible="true"></marker>
+      <marker ng-repeat='latlng in disheslatlng' position='[{{latlng.lat}},{{latlng.long}}]' visible="true" on-click="gotolink(event,latlng)">
+      </marker>
+    </map>
+  <a ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a>
 	<!-- Add a link to create a dish here -->
-
-
-	<a data-ng-href="#!/dishes/create">Create a Dish</a>
-
 </section>
 
 <div data-ng-controller="LikesController" data-ng-init="find()">
