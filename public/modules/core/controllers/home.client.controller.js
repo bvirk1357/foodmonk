@@ -37,7 +37,8 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       console.log(parseFloat(p.long));
       console.log(p);
       // infoWindow.setTitle("Title");
-      infoWindow.setContent('<a href=#!/dishes/' + p._id + '>See Page</a>');
+      infoWindow.setContent(
+        '<a href=#!/dishes/' + p._id + '>See Page</a>');
 
       infoWindow.setPosition(center);
       infoWindow.open($scope.objMapa);
