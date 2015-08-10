@@ -8,3 +8,15 @@
   <a ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a>
 	<!-- Add a link to create a dish here -->
 </section>
+
+<div data-ng-controller="LikesController" data-ng-init="find()">
+
+<p data-ng-repeat="like in likes">
+  {{like.name}}, {{like.dishname}}
+</p>
+
+</div>
+
+<div>
+
+</div>
