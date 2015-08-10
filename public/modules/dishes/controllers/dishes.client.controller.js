@@ -5,10 +5,8 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
 
 
     $scope.create = function(){
-      console.log('\n\nuser.username: ' + user.username + '\n\n');
-      console.log('Path hit');
       var dish = new Dishes({
-        username: user.username,
+        username: '',
         name: this.name,
         pic: this.pic,
         description: this.description,
