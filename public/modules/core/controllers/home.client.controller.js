@@ -18,5 +18,32 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       $location.path('dishes/'+ i._id);
     };
 
+    $scope.$on('mapInitialized', function (event, map) {
+      $scope.objMapa = map;
+    });
+
+    var activeInfoWindow = 0
+
+
+    $scope.showInfowindow = function(event, p) {
+      var image = 'http://png.clipart.me/graphics/thumbs/200/buddhist-monk-cartoon-illustration_200890463.jpg';
+      if (activeInfoWindow !== 0){
+        activeInfoWindow.close();
+      }
+      // var lat = p.lat + (Math.random()/100);
+      // var lng = parseFloat(p.long) + (Math.random()/100);
+      var infoWindow = new google.maps.InfoWindow();
+      var center = new google.maps.LatLng(p.lat + 10,p.long);
+      console.log(parseFloat(p.long));
+      console.log(p);
+      // infoWindow.setTitle("Title");
+      infoWindow.setContent(
+        '<a href=#!/dishes/' + p._id + '>See Page</a>');
+
+      infoWindow.setPosition(center);
+      infoWindow.open($scope.objMapa);
+      activeInfoWindow = infoWindow
+    };
+
 	}
 ]);
