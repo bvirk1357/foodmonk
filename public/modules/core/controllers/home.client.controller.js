@@ -7,6 +7,7 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 		$scope.authentication = Authentication;
 
     $scope.initiatePin = function(){
+      $scope.usertype = user.usertype;
       $scope.disheslatlng = HomeService.query();
       console.log('Dish location:' + $scope.disheslatlng);
     };
