@@ -7,11 +7,11 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 
 		// Create new Review
 		$scope.create = function(dishId) {
-			console.log("Hit the review create");
+			console.log('Hit the review create');
 			// Create new Review object
 			var review = new Reviews ({
-				dishId: dishId
-				reviews: this.reviews
+				dishId: dishId,
+				review: this.review
 			});
 
 			// Redirect after save

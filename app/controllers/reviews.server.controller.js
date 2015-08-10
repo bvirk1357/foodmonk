@@ -16,6 +16,8 @@ exports.create = function(req, res) {
 	var review = new Review(req.body);
 	review.user = req.user;
 	review.dish = req.dish;
+	review.username = req.user.username;
+	review.name = req.user.displayName;
 
 	review.save(function(err) {
 		if (err) {

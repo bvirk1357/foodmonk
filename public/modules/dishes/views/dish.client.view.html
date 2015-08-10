@@ -19,17 +19,19 @@
   <div class="storyBox">
      <span>{{dish.user_story}}</span>
   </div>
-<form class="form-horizontal" data-ng-controller="ReviewsController" data-ng-submit="create(dish._id)" novalidate>
-  <div class="form-group">
-    <label class="control-label" for="reviews">Reviews</label>
-    <div class="controls">
-      <textarea name="reviews" data-ng-model="reviews" id="reviews" class="form-control" cols="20" rows="5" placeholder="Leave Comments or Reviews"></textarea>
+<div data-ng-controller="ReviewsController">
+  <form class="form-horizontal" data-ng-submit="create(dish._id)" novalidate>
+    <div class="form-group">
+      <label class="control-label" for="review">Reviews</label>
+      <div class="controls">
+        <textarea name="review" data-ng-model="review" id="review" class="form-control" cols="20" rows="5" placeholder="Leave Comments or Reviews"></textarea>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <input type="submit" class="btn btn-default">
-  </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-default">
+    </div>
   </form>
+</div>
   <!-- HACK FOR TESTING THE SCHEDULE FLOW -->
   <br>
   <div ng-controller="LikesController">

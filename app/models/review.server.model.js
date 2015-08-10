@@ -16,7 +16,8 @@ var ReviewSchema = new Schema({
     required: 'Please fill Like name',
     trim: true
   },
-  reviews: {
+
+  review: {
     type: String,
     default: '',
     required: 'Please assign a dish name',
@@ -27,6 +28,13 @@ var ReviewSchema = new Schema({
     required: 'Please fill username',
     trim: true
   },
+
+  dishId: {
+    type: String,
+    required: 'Please fill dishId',
+    trim: true
+  },
+
 	created: {
 		type: Date,
 		default: Date.now
