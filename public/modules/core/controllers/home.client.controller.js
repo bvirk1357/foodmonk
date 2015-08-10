@@ -18,5 +18,28 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       $location.path('dishes/'+ i._id);
     };
 
+    $scope.$on('mapInitialized', function (event, map) {
+      $scope.objMapa = map;
+    });
+
+    var activeInfoWindow = 0
+
+    $scope.showInfowindow = function(event, p) {
+      if (activeInfoWindow !== 0){
+        activeInfoWindow.close();
+      }
+      // var lat = p.lat + (Math.random()/100);
+      // var lng = parseFloat(p.long) + (Math.random()/100);
+      var infoWindow = new google.maps.InfoWindow();
+      var center = new google.maps.LatLng(p.lat,p.long);
+      console.log(parseFloat(p.long));
+      console.log(p);
+      infoWindow.setContent('<h3>' + p.lat + '</h3>');
+
+      infoWindow.setPosition(center);
+      infoWindow.open($scope.objMapa);
+      activeInfoWindow = infoWindow
+    };
+
 	}
 ]);
