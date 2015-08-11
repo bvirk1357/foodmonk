@@ -16,9 +16,9 @@ exports.create = function(req, res) {
 	console.log('\nlikes.server.ctrl.create, req.body: ' + req.body + '\n');
 
 	var like = new Like(req.body);
-	like.user = req.user;
-	like.username = req.user.username;
-	like.name = req.user.displayName;
+		like.user = req.user;
+		like.username = req.user.username;
+		like.name = req.user.displayName;
 
 	like.save(function(err) {
 		if (err) {
