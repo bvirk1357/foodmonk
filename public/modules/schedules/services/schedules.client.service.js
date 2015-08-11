@@ -5,9 +5,11 @@ angular.module('schedules').factory('Schedules', ['$resource',
 	function($resource) {
 		return $resource('schedules/:scheduleId', { scheduleId: '@_id'
 		}, {
-			update: {
-				method: 'PUT'
-			}
+	     'get':    {method:'GET'},
+      'save':   {method:'POST'},
+      'query':  {method:'GET', isArray:true},
+      'remove': {method:'DELETE'},
+      'delete': {method:'DELETE'}
 		});
 	}
 ]);

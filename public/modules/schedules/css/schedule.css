@@ -1,0 +1,13 @@
+.schedules {
+  width: 30%;
+  padding: 10px;
+  border:2px solid #000066;
+  border-top:2px line #000000;
+  border-bottom:2px solid #000066;
+  border-width:2px 2px 2px;
+  border-bottom:2px line #000066;
+  border-radius:10px;
+-moz-border-radius:10px;
+  margin: 25px;
+}
+
