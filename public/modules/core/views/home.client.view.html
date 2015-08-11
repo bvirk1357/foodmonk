@@ -22,6 +22,17 @@
  </p>
 </div>
 
+
+<div class="schedules" data-ng-controller="ConfirmationsController" data-ng-init="find()">
+  <b>Pending Confirmation</b>
+  <br>
+  <hr>
+  <span data-ng-repeat="confirmation in confirmations">
+  {{confirmation.dishname}}, {{confirmation.confirm_status}}, <form ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><input type="submit" value="Confirm"></form><p ng-show="confirmation.confirm_status">Confirmed!</p>
+  </span> <br>
+</div>
+
+
 <div class="schedules" data-ng-controller="SchedulesController" data-ng-init="find()">
   <b>Upcoming Cooking Sessions</b>
   <br>

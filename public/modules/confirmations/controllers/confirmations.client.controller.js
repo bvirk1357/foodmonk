@@ -25,7 +25,7 @@ angular.module('confirmations').controller('ConfirmationsController', ['$scope',
 
 		// Remove existing Confirmation
 		$scope.remove = function(confirmation) {
-			if ( confirmation ) { 
+			if ( confirmation ) {
 				confirmation.$remove();
 
 				for (var i in $scope.confirmations) {
@@ -41,24 +41,33 @@ angular.module('confirmations').controller('ConfirmationsController', ['$scope',
 		};
 
 		// Update existing Confirmation
-		$scope.update = function() {
-			var confirmation = $scope.confirmation;
+		$scope.update = function(dishname, username) {
 
-			confirmation.$update(function() {
-				$location.path('confirmations/' + confirmation._id);
+			console.log('confirmations.client.ctrl.update(): dishname: ' + dishname + ', username: ' + username);
+
+			var confirmation = new Confirmations ({
+				dishname: dishname, username: username
+			});
+
+			confirmation.$confirm(function() {
+				console.log('confirmations.client.ctrl.update: Confirmed \n');
+				// $location.path('confirmations/' + confirmation._id);
 			}, function(errorResponse) {
+				console.log('error' + errorResponse.data.message);
 				$scope.error = errorResponse.data.message;
 			});
+
 		};
 
 		// Find a list of Confirmations
 		$scope.find = function() {
 			$scope.confirmations = Confirmations.query();
+			console.log('confirmations.client.ctrl.find(): confirmations: ' + $scope.confirmations)
 		};
 
 		// Find existing Confirmation
 		$scope.findOne = function() {
-			$scope.confirmation = Confirmations.get({ 
+			$scope.confirmation = Confirmations.get({
 				confirmationId: $stateParams.confirmationId
 			});
 		};

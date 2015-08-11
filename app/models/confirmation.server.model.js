@@ -13,7 +13,6 @@ var ConfirmationSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Confirmation name',
 		trim: true
 	},
 	dishname: {
