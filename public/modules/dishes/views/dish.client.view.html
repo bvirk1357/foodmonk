@@ -20,7 +20,7 @@
      <span>{{dish.user_story}}</span>
   </div>
   <div data-ng-controller="ReviewsController">
-    <form class="form-horizontal" data-ng-submit="create(dish.name)" novalidate>
+    <form class="form-horizontal" data-ng-submit="create(dish.name, dish._id)" novalidate>
       <div class="form-group">
         <label class="control-label" for="review">Reviews</label>
         <div class="controls">
@@ -38,7 +38,8 @@
     <br>
     <hr>
     <p data-ng-repeat="review in reviews">
-   &hearts; {{review.review}}
+      &hearts; {{review.username}}
+      &hearts; {{review.review}}
     </p>
   </div>
 

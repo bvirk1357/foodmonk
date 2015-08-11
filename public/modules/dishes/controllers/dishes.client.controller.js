@@ -19,7 +19,8 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
       });
 
       dish.$save(function(response) {
-        $location.path('/dishes/{{user.username}}');
+        console.log("This is the dish id:" + dish._id)
+        $location.path('/dishes/'+dish._id);
         //Placeholder for resetting form fields.
       }, function(errorResponse) {
         $scope.error = errorResponse.data.message;
