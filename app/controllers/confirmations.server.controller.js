@@ -72,8 +72,8 @@ exports.delete = function(req, res) {
 /**
  * List of Confirmations
  */
-exports.list = function(req, res) { 
-	Confirmation.find().sort('-created').populate('user', 'displayName').exec(function(err, confirmations) {
+exports.list = function(req, res) {
+	Confirmation.find({username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, confirmations) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -87,7 +87,7 @@ exports.list = function(req, res) {
 /**
  * Confirmation middleware
  */
-exports.confirmationByID = function(req, res, next, id) { 
+exports.confirmationByID = function(req, res, next, id) {
 	Confirmation.findById(id).populate('user', 'displayName').exec(function(err, confirmation) {
 		if (err) return next(err);
 		if (! confirmation) return next(new Error('Failed to load Confirmation ' + id));
@@ -105,3 +105,51 @@ exports.hasAuthorization = function(req, res, next) {
 	}
 	next();
 };
+
+/**
+ * Confirm a single confirmation
+ */
+exports.confirm = function(req, res, next){
+
+	console.log('Inside confirmation.server.confirm(), req.body.dishname: ' + req.body.dishname + ', req.body.username: ' + req.body.username + '.');
+
+	// var confirmation = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username}, {'confirm_status': true});
+
+	var confirmation = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username});
+
+	console.log('confirmation: ' + confirmation);
+
+	confirmation = _.extend(confirmation , req.body);
+
+	confirmation.save(function(err) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(confirmation);
+		}
+	});
+
+	// var confirmation = Confirmation.find({dishname: req.body.dishname, username: req.body.username}).exec(function(err, confirmation) {
+
+	// 		if (err) return next(err);
+
+	// 		if (! confirmation) return next(new Error('Failed to load Confirmation ' + id));
+
+	// 		console.log('Confirmation found: '+ confirmation);
+
+	// 		confirmation.confirm_status = true;
+	// 		confirmation.save(function(err) {
+	// 			if (err) {
+	// 				return res.status(400).send({
+	// 					message: errorHandler.getErrorMessage(err)
+	// 				});
+	// 			} else {
+	// 				res.jsonp(confirmation);
+	// 			}
+	// 		});
+	// 		console.log('Confirmation saved');
+	// 		// next();
+	// });
+}
