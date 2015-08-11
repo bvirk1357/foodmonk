@@ -115,21 +115,35 @@ exports.confirm = function(req, res, next){
 
 	// var confirmation = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username}, {'confirm_status': true});
 
-	var confirmation = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username});
+	// var confirmationObj = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username});
 
-	console.log('confirmation: ' + confirmation);
-
-	confirmation = _.extend(confirmation , req.body);
-
-	confirmation.save(function(err) {
+	Confirmation.update({'dishname': req.body.dishname, 'username': req.body.username}, {$set: {'confirm_status': true} }, function(err) {
 		if (err) {
+			console.log('Error in updating');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			res.jsonp(confirmation);
+			console.log('update done');
+			res.jsonp();
 		}
-	});
+	})
+
+	// res.jsonp();
+
+	// console.log('confirmation: ' + confirmationObj);
+
+	// confirmationObj = _.extend(confirmationObj , req.body);
+
+	// confirmationObj.save(function(err) {
+	// 	if (err) {
+	// 		return res.status(400).send({
+	// 			message: errorHandler.getErrorMessage(err)
+	// 		});
+	// 	} else {
+	// 		res.jsonp(confirmationObj);
+	// 	}
+	// });
 
 	// var confirmation = Confirmation.find({dishname: req.body.dishname, username: req.body.username}).exec(function(err, confirmation) {
 
