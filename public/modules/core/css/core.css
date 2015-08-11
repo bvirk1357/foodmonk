@@ -13,3 +13,167 @@
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
 }
+
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+img {
+  float: right;
+  margin: 0 0 10 10;
+  image-rendering: pixelated;
+}
+
+.polaroid {
+  position: relative;
+  width: 220px;
+  float: right;
+  width: 40%;
+  height: 40%;
+}
+
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+  height: 70%;
+  width: 70%;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: georgia;
+  color: #888;
+}
+
+b {
+  font-size: 18px;
+}
+
+.storyBox {
+  width: 70%;
+  height: 40%;
+  border:5px solid tomato;
+  /*line-height: 300px;*/
+}
+
+/*.storyBox span {
+  position: absolute;
+}*/
+
+map {
+    border-top: 3px solid black;
+    border-left: 3px solid black;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
+  background-image: -webkit-linear-gradient(#000, transparent);
+  background-image:
+      -moz-linear-gradient(#000, transparent),
+      -moz-linear-gradient(#000, transparent);
+  background-image:
+      -o-linear-gradient(#000, transparent),
+      -o-linear-gradient(#000, transparent);
+  background-image:
+      linear-gradient(#000, transparent),
+      linear-gradient(#000, transparent);
+  -moz-background-size: 3px 100%;
+  background-size: 3px 100%;
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+}
+
+.schedules {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+  border:2px solid #000066;
+  border-top:2px line #000000;
+  border-bottom:2px solid #000066;
+  border-width:2px 2px 2px;
+  border-bottom:2px line #000066;
+  border-radius:10px;
+-moz-border-radius:10px;
+  margin: 15px;
+  float: left;
+}
+
+.confirmations {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+  border:2px solid #000066;
+  border-top:2px line #000000;
+  border-bottom:2px solid #000066;
+  border-width:2px 2px 2px;
+  border-bottom:2px line #000066;
+  border-radius:10px;
+-moz-border-radius:10px;
+  margin: 15px;
+  float: left;
+}
+
+.likes {
+  width: 30%;
+  height: 30%;
+  padding: 10px;
+  border:2px solid #000066;
+  border-top:2px line #000000;
+  border-bottom:2px solid #000066;
+  border-width:2px 2px 2px;
+  border-bottom:2px line #000066;
+  border-radius:10px;
+-moz-border-radius:10px;
+  margin: 15px;
+  float: left;
+}
+
+#quote {
+  font-family: georgia;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+map {
+
+}
+
+#confirmDish {
+  display: inline-block;
+  float:left;
+}
+
+
+.btn {
+  float: right;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  background: #3498db;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-bottom: 2px;
+}
+
+.btn:hover {
+  background: #de7942;
+  background-image: -webkit-linear-gradient(top, #de7942, #d98934);
+  background-image: -moz-linear-gradient(top, #de7942, #d98934);
+  background-image: -ms-linear-gradient(top, #de7942, #d98934);
+  background-image: -o-linear-gradient(top, #de7942, #d98934);
+  background-image: linear-gradient(to bottom, #de7942, #d98934);
+  text-decoration: none;
+}

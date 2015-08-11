@@ -1,6 +1,10 @@
+
 <section data-ng-controller="HomeController" data-ng-init="initiatePin()">
   <br>
-  <p> "The journey of a thousand miles begins with a single bite."</p>
+    <a class="btn" ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a>
+  <!-- Add a link to create a dish here -->
+  <p id="quote"> "The journey of a thousand miles begins with a single bite."</p>
+  <br>
     <map center="[14.506726, 5]" zoom ='2' style="height: 500px">
       <marker position="[37.784840, -122.397424]" visible="true" icon="http://i.imgur.com/ATrfpWa.png"></marker>
 
@@ -8,9 +12,10 @@
 
       </marker>
     </map>
-  <a ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a>
-	<!-- Add a link to create a dish here -->
 </section>
+
+<hr>
+
 
 <div class="likes" data-ng-controller="LikesController" data-ng-init="find()">
 
@@ -23,12 +28,12 @@
 </div>
 
 
-<div class="schedules" data-ng-controller="ConfirmationsController" data-ng-init="find()">
+<div class="confirmations" data-ng-controller="ConfirmationsController" data-ng-init="find()">
   <b>Pending Confirmation</b>
   <br>
   <hr>
-  <span data-ng-repeat="confirmation in confirmations">
-  {{confirmation.dishname}}, {{confirmation.confirm_status}}, <form ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><input type="submit" value="Confirm"></form><p ng-show="confirmation.confirm_status">Confirmed!</p>
+  <span id="confirmDish" data-ng-repeat="confirmation in confirmations">
+  {{confirmation.dishname}} <form ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">Confirm</button></form><p ng-show="confirmation.confirm_status">Confirmed!</p>
   </span> <br>
 </div>
 
@@ -41,3 +46,5 @@
 {{schedule.name}}, {{schedule.username}}, {{schedule.user_story}}
 </p>
 </div>
+
+
