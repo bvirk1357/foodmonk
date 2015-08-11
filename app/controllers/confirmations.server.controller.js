@@ -113,10 +113,6 @@ exports.confirm = function(req, res, next){
 
 	console.log('Inside confirmation.server.confirm(), req.body.dishname: ' + req.body.dishname + ', req.body.username: ' + req.body.username + '.');
 
-	// var confirmation = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username}, {'confirm_status': true});
-
-	// var confirmationObj = Confirmation.find({'dishname': req.body.dishname, 'username': req.body.username});
-
 	Confirmation.update({'dishname': req.body.dishname, 'username': req.body.username}, {$set: {'confirm_status': true} }, function(err) {
 		if (err) {
 			console.log('Error in updating');
@@ -125,45 +121,8 @@ exports.confirm = function(req, res, next){
 			});
 		} else {
 			console.log('update done');
-			res.jsonp();
+			res.jsonp({'confirmed': 'true'});
 		}
 	})
 
-	// res.jsonp();
-
-	// console.log('confirmation: ' + confirmationObj);
-
-	// confirmationObj = _.extend(confirmationObj , req.body);
-
-	// confirmationObj.save(function(err) {
-	// 	if (err) {
-	// 		return res.status(400).send({
-	// 			message: errorHandler.getErrorMessage(err)
-	// 		});
-	// 	} else {
-	// 		res.jsonp(confirmationObj);
-	// 	}
-	// });
-
-	// var confirmation = Confirmation.find({dishname: req.body.dishname, username: req.body.username}).exec(function(err, confirmation) {
-
-	// 		if (err) return next(err);
-
-	// 		if (! confirmation) return next(new Error('Failed to load Confirmation ' + id));
-
-	// 		console.log('Confirmation found: '+ confirmation);
-
-	// 		confirmation.confirm_status = true;
-	// 		confirmation.save(function(err) {
-	// 			if (err) {
-	// 				return res.status(400).send({
-	// 					message: errorHandler.getErrorMessage(err)
-	// 				});
-	// 			} else {
-	// 				res.jsonp(confirmation);
-	// 			}
-	// 		});
-	// 		console.log('Confirmation saved');
-	// 		// next();
-	// });
 }
