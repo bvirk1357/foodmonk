@@ -40,15 +40,23 @@ exports.create = function(req, res) {
 
 				Like.find({dishname: cur_dishname}).exec(function(err, likes){
 						console.log('\n\nLikes: ' + likes + '.');
+
 						var like_count = likes.length;
+
 						console.log('There are currently ' + like_count + ' likes for dish(before saving new one): ' + cur_dishname + '\n\n');
 						console.log('\nlikes: ' + likes + '\n');
+
 						if(likes.length >= 1){
+
 							console.log('**Found the confirmations case**');
+
 							var new_confirm;
 							for (var i = likes.length - 1; i >= 0; i--) {
+
 								console.log('Creating confirmation');
+
 								new_confirm = new Confirmation({dishname: cur_dishname, username: likes[i].username, confirm_status: false});
+
 								new_confirm.save(function(err) {
 									if (err) {
 										console.log('error saving confirmation: ' + err);
@@ -57,10 +65,20 @@ exports.create = function(req, res) {
 									}
 								});
 							}
-						}
+
+							// Also remove the related likes from the users
+							Like.remove({dishname: cur_dishname}, function(err) {
+								if (err) {
+									console.log('Error removing: ' + errorHandler.getErrorMessage(err));
+								} else {
+									console.log('Successfully removed likes');
+								}
+							});
+
+						}// if() ends here
+
 				});
 			});
-
 
 			res.jsonp(new_like);
 		}
