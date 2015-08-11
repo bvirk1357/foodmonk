@@ -8,7 +8,7 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 		if ($scope.authentication.user) $location.path('/');
 
 		$scope.signup = function() {
-
+			$scope.usertype = user.usertype;
 			console.log('\n\nInside auth.client.ctrl.js\n\n');
 
 			$http.post('/auth/signup', $scope.credentials).success(function(response) {
@@ -27,8 +27,11 @@ angular.module('users').controller('AuthenticationController', ['$scope', '$http
 				$scope.error = response.message;
 			});
 		};
-
+		$scope.usertype = function(){
+      $scope.usertype = user.usertype;
+    };
 		$scope.signin = function() {
+			$scope.usertype = user.usertype;
 			$http.post('/auth/signin', $scope.credentials).success(function(response) {
 
 				console.log('\n\nauth.client.ctrl.js.signin.success()\n\n');
