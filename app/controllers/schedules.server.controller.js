@@ -64,6 +64,7 @@ exports.delete = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('schedules!' + schedule);
 			res.jsonp(schedule);
 		}
 	});
@@ -72,7 +73,7 @@ exports.delete = function(req, res) {
 /**
  * List of Schedules
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
 	Schedule.find().sort('-created').populate('user', 'displayName').exec(function(err, schedules) {
 		if (err) {
 			return res.status(400).send({
@@ -87,7 +88,7 @@ exports.list = function(req, res) {
 /**
  * Schedule middleware
  */
-exports.scheduleByID = function(req, res, next, id) { 
+exports.scheduleByID = function(req, res, next, id) {
 	Schedule.findById(id).populate('user', 'displayName').exec(function(err, schedule) {
 		if (err) return next(err);
 		if (! schedule) return next(new Error('Failed to load Schedule ' + id));
