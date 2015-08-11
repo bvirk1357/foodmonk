@@ -44,11 +44,6 @@ var ReviewSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   },
-
-	dish: {
-		type: Schema.ObjectId,
-		ref: 'Dish'
-	}
 });
 
 mongoose.model('Review', ReviewSchema);
