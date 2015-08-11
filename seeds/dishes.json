@@ -1,6 +1,6 @@
 [
 
-{"name": "Samosa", "username": "bvirk", "lat": "28.632774", "long": "77.219871", "pic": "Samosa", "description": "Fried or baked pastry with savoury filling", "user_story": "Lived in India for 17 years", "cost": "$10.00", "ingredients": "Potatoes,Oil,Indian Spices", "prep_time": "45 min", "availability": "Saturday 4pm-6pm"},
+{"name": "Samosa", "username": "bvirk", "lat": "6.940293", "long": "79.865572", "pic": "Samosa", "description": "Fried or baked pastry with savoury filling", "user_story": "Lived in India for 17 years", "cost": "$10.00", "ingredients": "Potatoes,Oil,Indian Spices", "prep_time": "45 min", "availability": "Saturday 4pm-6pm"},
 
 {"name": "Crepe", "username": "sungry", "lat": "48.858787", "long": "2.293666", "pic": "Crepe", "description": "very thin pancake, usually made from wheat flour or buckwheat flour", "user_story": "Visits Paris annually", "cost": "$5.00", "ingredients": "Wheat,Egg", "prep_time": "20 min", "availability": "Mornings/Brunch"},
 
