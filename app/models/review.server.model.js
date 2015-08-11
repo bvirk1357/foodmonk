@@ -29,9 +29,9 @@ var ReviewSchema = new Schema({
     trim: true
   },
 
-  dishId: {
+  dishname: {
     type: String,
-    required: 'Please fill dishId',
+    required: 'Please fill dishname',
     trim: true
   },
 

@@ -20,7 +20,7 @@
      <span>{{dish.user_story}}</span>
   </div>
   <div data-ng-controller="ReviewsController">
-    <form class="form-horizontal" data-ng-submit="create(dish._id)" novalidate>
+    <form class="form-horizontal" data-ng-submit="create(dish.name)" novalidate>
       <div class="form-group">
         <label class="control-label" for="review">Reviews</label>
         <div class="controls">
@@ -33,7 +33,7 @@
     </form>
   </div>
 
-  <div class="reviews" data-ng-controller="ReviewsController" data-ng-init="find(dish._id)">
+  <div class="reviews">
     <b>Reviews for dishes</b>
     <br>
     <hr>
@@ -41,13 +41,6 @@
    &hearts; {{review.review}}
     </p>
   </div>
-<!--   <div class="list-group">
-        <a data-ng-repeat="review in reviews" class="list-group-item">
-            <h4 class="list-group-item-heading" data-ng-bind="review.review"></h4>
-            <span data-ng-bind="dish.description"></span>
-        </a>
-    </div> -->
-
 
   <!-- HACK FOR TESTING THE SCHEDULE FLOW -->
   <br>
