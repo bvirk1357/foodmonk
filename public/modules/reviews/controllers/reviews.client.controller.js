@@ -6,10 +6,11 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 		$scope.authentication = Authentication;
 
 		// Create new Review
-		$scope.create = function(dishId) {
+		$scope.create = function(dishname, dishId) {
 			console.log('Hit the review create');
 			// Create new Review object
 			var review = new Reviews ({
+				dishname: dishname,
 				dishId: dishId,
 				review: this.review
 			});
@@ -18,7 +19,8 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 			review.$save(function(response) {
 				$location.path('/dishes');
 				console.log('Review made');
-
+				console.log(review.dishId);
+				$location.path('/dishes/'+review.dishId);
 				// Clear form fields
 				$scope.name = '';
 			}, function(errorResponse) {
@@ -55,8 +57,12 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 		};
 
 		// Find a list of Reviews
-		$scope.find = function() {
-			$scope.reviews = Reviews.query();
+		$scope.find = function(dishname) {
+			console.log('Made it to review find ' + dishname);
+			var reviewDishSrv = new Reviews({
+				dishname: dishname
+			});
+			$scope.reviews = reviewDishSrv.$query();
 		};
 
 		// Find existing Review
