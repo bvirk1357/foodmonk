@@ -77,12 +77,17 @@ exports.delete = function(req, res) {
  * List of Reviews
  */
 exports.list = function(req, res) {
+
 	Review.find().sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+		console.log('this is the req\n');
+		console.log(req);
 		if (err) {
+			console.log('\nReview failed\n');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('\nReview listed\n');
 			res.jsonp(reviews);
 		}
 	});

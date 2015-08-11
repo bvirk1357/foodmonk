@@ -55,7 +55,8 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 		};
 
 		// Find a list of Reviews
-		$scope.find = function() {
+		$scope.find = function(dishId) {
+			console.log('Made it to review find');
 			$scope.reviews = Reviews.query();
 		};
 
