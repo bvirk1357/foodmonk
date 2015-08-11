@@ -13,7 +13,6 @@ var ScheduleSchema = new Schema({
 	name: {
 		type: String,
 		default: '',
-		required: 'Please fill Schedule name',
 		trim: true
 	},
 	dishname: {
@@ -23,7 +22,7 @@ var ScheduleSchema = new Schema({
 	},
 	cook_username: {
 		type: String,
-		required: 'Please fill cook username',
+		// required: 'Please fill cook username',
 		trim: true
 	},
 	patron_username: {
@@ -38,7 +37,7 @@ var ScheduleSchema = new Schema({
 	},
 	schedule_date: {
 		type: Date,
-		required: 'Please assign a schedule date',
+		// required: 'Please assign a schedule date',
 		default: Date.now
 	},
 	created: {

@@ -75,7 +75,7 @@ exports.delete = function(req, res) {
  */
 exports.list = function(req, res) {
 	console.log('schedule list here');
-	Schedule.find({username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, schedules) {
+	Schedule.find({patron_username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, schedules) {
 		if (err) {
 			console.log('err here' + err);
 			return res.status(400).send({

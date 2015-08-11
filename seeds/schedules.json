@@ -1,5 +1,5 @@
 [
-  {"username": "sungry",
+  {"patron_username": "sungry",
   "name": "Korean Fried Chicken",
   "pic": "http://koreanfoodgallery.com/wp-content/files_mf/pigpigscorner_koreanfriedchicken.jpg", "description": "Double-frying chicken wings is the secret to achieving the delicate, crackly crust that is the hallmark of this popular Korean specialty",
   "user_story": "OMG MY FUCKING FAVORITE NOM NOM NOM",
@@ -11,7 +11,7 @@
   "lat": "134.234",
   "lng": "-270.342" },
 
-  {"username": "dchen101",
+  {"patron_username": "dchen101",
   "name": "Shanghai Dumpling",
   "pic": "http://flavorboulevard.com/wp-content/uploads/2012/07/sdk-xiaolongbao.jpg",
   "description": "Xialongbao is a type of steamed bun (baozi) from the Jiangnan region of China, especially associated with Shanghai and Wuxi. It is traditionally prepared in xiaolong, small bamboo steaming baskets, which give them their name.",
@@ -24,7 +24,7 @@
   "lat": "109238",
   "lng": "123456" },
 
-  {"username": "bvirk",
+  {"patron_username": "bvirk",
   "name": "Lamb Tandoori",
   "pic": "http://www.taste.com.au/images/recipes/del/2010/04/24636_l.jpg",
   "description": "A spicy, yogurt-based marinade tenderizes the lamb, which is accompanied by a sweet and gingery chutney.",
