@@ -9,22 +9,6 @@ var mongoose = require('mongoose'),
 	Confirmation = mongoose.model('Confirmation'),
 	_ = require('lodash');
 
-// Here we check if there are enough likes to create a possible deal
-// First, check this logic if there are two likes for the same name
-var countLikes = function(cur_dishname) {
-
-	console.log('\nChecking for enough likes.\n');
-
-	Like.find({dishname: cur_dishname}).exec(function(err, likes){
-			console.log('\n\nLikes: ' + likes + '.');
-			var like_count = likes.length;
-			console.log('There are currently ' + like_count + ' likes for dish(before saving new one): ' + cur_dishname + '\n\n');
-			console.log('\nlikes: ' + likes + '\n');
-			if(likes.length >= 1){
-				console.log('**Found the confirmations case**');
-			}
-	});
-};
 
 /**
  * Create a Like
@@ -61,6 +45,18 @@ exports.create = function(req, res) {
 						console.log('\nlikes: ' + likes + '\n');
 						if(likes.length >= 1){
 							console.log('**Found the confirmations case**');
+							var new_confirm;
+							for (var i = likes.length - 1; i >= 0; i--) {
+								console.log('Creating confirmation');
+								new_confirm = new Confirmation({dishname: cur_dishname, username: likes[i].username, confirm_status: false});
+								new_confirm.save(function(err) {
+									if (err) {
+										console.log('error saving confirmation: ' + err);
+									} else {
+										console.log('saved confirmation');
+									}
+								});
+							}
 						}
 				});
 			});
