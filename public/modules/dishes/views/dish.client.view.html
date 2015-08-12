@@ -1,10 +1,11 @@
 <section data-ng-controller="DishesController" data-ng-init="read()">
-  <div class="page-header">
+    <br><br><br>
     <h1>{{dish.name | uppercase}}</h1>
-  </div>
+    <br>
+
   <div class="polaroid">
     <p>{{dish.name}} by {{dish.username}}</p>
-    <img ng-src={{dish.pic}}>
+    <img src={{dish.pic}}>
   </div>
   <div class="dishInfo">
     <p><b>Cook</b> {{dish.username}}</p>
@@ -16,13 +17,23 @@
   </div>
   <b>Cook's Story</b>
   <br>
-  <div class="storyBox">
-     <span>{{dish.user_story}}</span>
+  {{dish.user_story}}
+  <br><br>
+    <div class="reviews">
+    <b>Reviews for dishes</b>
+
+    <p data-ng-repeat="review in reviews">
+      &hearts; <b>{{review.username}}</b> : {{review.review}}
+    </p>
   </div>
+
   <div data-ng-controller="ReviewsController">
     <form class="form-horizontal" data-ng-submit="create(dish.name, dish._id)" novalidate>
       <div class="form-group">
-        <label class="control-label" for="review">Reviews</label>
+<!--         <p><label class="control-label" for="review"><b>Reviews</b></label></p> -->
+<br>
+<hr>
+  <p><b>Reviews</b></p>
         <div class="controls">
           <textarea name="review" data-ng-model="review" id="review" class="form-control" cols="20" rows="5" placeholder="Leave Comments or Reviews"></textarea>
         </div>
@@ -33,20 +44,11 @@
     </form>
   </div>
 
-  <div class="reviews">
-    <b>Reviews for dishes</b>
-    <br>
-    <hr>
-    <p data-ng-repeat="review in reviews">
-      &hearts; {{review.username}}
-      &hearts; {{review.review}}
-    </p>
-  </div>
+
 
   <!-- HACK FOR TESTING THE SCHEDULE FLOW -->
-  <br>
   <div ng-controller="LikesController">
-    <button ng-click="create(dish.name)">Like this dish.</button>
+    <button id="likeBtn" ng-click="create(dish.name)">Like this dish.</button>
 
     <p ng-show="liked">You have liked this dish!</p>
   </div>

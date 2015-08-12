@@ -15,6 +15,8 @@
     </map>
 </section>
 
+<br><br>
+
 <div class="likes" data-ng-controller="LikesController" data-ng-init="find()">
   <span class="columnName">
     <b>Dishes You've Liked</b>
@@ -31,11 +33,10 @@
   <span class="columnName">
     <b>Pending Confirmation</b>
   </span>
-  <br>
   <hr size="10">
   <span id="confirmDish" data-ng-repeat="confirmation in confirmations">
   <b>{{confirmation.dishname}}</b>
-  <form ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">Confirm</button>
+  <form class="confirmForm"ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">  Confirm</button>
   </form>
   <p ng-show="confirmation.confirm_status">Confirmed!</p>
   </span> <br>
@@ -53,7 +54,7 @@
   <br>
   <hr>
 <p data-ng-repeat="schedule in schedules">
-{{schedule.name}} by {{schedule.patron_username}}
+<b>{{schedule.name}}</b> by <b>{{schedule.patron_username}}</b>
 
 </p>
 </div>
