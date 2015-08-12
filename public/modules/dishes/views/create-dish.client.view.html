@@ -11,13 +11,19 @@
                       <input type="text" data-ng-model="name" id="name" class="form-control" placeholder="Name" required>
                   </div>
               </div>
+              Drop File:
+    <div ngf-drop ngf-select ng-model="files" class="drop-box"
+        ngf-drag-over-class="dragover" ngf-multiple="true" ngf-allow-dir="true"
+        accept="image/*,application/pdf">Drop pdfs or images here or click to upload</div>
+    <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
 
-              <div class="form-group">
+
+<!--               <div class="form-group">
                   <label class="control-label" for="pic">Pic</label>
                   <div class="controls">
                       <input type="text" data-ng-model="pic" id="pic" class="form-control" placeholder="Pic" required>
                   </div>
-              </div>
+              </div> -->
 
               <div class="form-group">
                 <label class="control-label" for="origin">Description</label>

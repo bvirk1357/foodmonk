@@ -32,14 +32,13 @@
       </div>
     </form>
   </div>
-
-  <div class="reviews">
-    <b>Reviews for dishes</b>
-    <br>
-    <hr>
+  <b>Reviews for dishes</b>
+  <div class="reviews" style="width:75%;height:150px;line-height:3em;background-color:white;overflow:auto;padding:5px;">
     <p data-ng-repeat="review in reviews">
       &hearts; {{review.username}}
       &hearts; {{review.review}}
+      &hearts; {{review.created.slice(0, 10)}}
+      <hr>
     </p>
   </div>
 

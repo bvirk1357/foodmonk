@@ -17,12 +17,10 @@ angular.module('reviews').controller('ReviewsController', ['$scope', '$statePara
 
 			// Redirect after save
 			review.$save(function(response) {
-				$location.path('/dishes');
-				console.log('Review made');
-				console.log(review.dishId);
+				console.log('this is the path /dishes/'+review.dishId);
 				$location.path('/dishes/'+review.dishId);
 				// Clear form fields
-				$scope.name = '';
+			 	$scope.name = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
