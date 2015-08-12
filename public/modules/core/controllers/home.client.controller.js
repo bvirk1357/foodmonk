@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('core').controller('HomeController', ['$scope', '$location', 'Authentication', 'HomeService',
 	function($scope, $location, Authentication, HomeService) {
 		// This provides Authentication context.
@@ -24,21 +23,21 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 
     var activeInfoWindow = 0
     $scope.showInfowindow = function(event, p) {
-      var image = 'http://png.clipart.me/graphics/thumbs/200/buddhist-monk-cartoon-illustration_200890463.jpg';
+      // var image = 'http://png.clipart.me/graphics/thumbs/200/buddhist-monk-cartoon-illustration_200890463.jpg';
       if (activeInfoWindow !== 0){
         activeInfoWindow.close();
       }
       // var lat = p.lat + (Math.random()/100);
       // var lng = parseFloat(p.long) + (Math.random()/100);
       var infoWindow = new google.maps.InfoWindow();
-      var center = new google.maps.LatLng(p.lat + 10,p.long);
+      var center = new google.maps.LatLng(p.lat + 15,p.long);
       console.log(parseFloat(p.long));
       console.log(p);
       // infoWindow.setTitle("Title");
       infoWindow.setContent(
-
-        '<a href=#!/dishes/' + p._id + '>See details</a>'
-
+        '<p><b>' + p.name + '</b></p>' +
+        '<p><img src=' + p.pic + ' height="100" width="100"></p>' +
+        '<p><a href=#!/dishes/' + p._id + '>See details</a><p>'
         );
 
       infoWindow.setPosition(center);
