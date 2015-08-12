@@ -1,7 +1,8 @@
 
 <section data-ng-controller="HomeController" data-ng-init="initiatePin()">
-  <br>
-    <a class="btn" ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a>
+
+  <br><br><br>
+    <p><a class="btn" ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a></p>
   <!-- Add a link to create a dish here -->
   <p id="quote"> <b>"The journey of a thousand miles begins with a single bite."</b></p>
   <br>
@@ -14,14 +15,12 @@
     </map>
 </section>
 
-
-<hr>
 <div class="likes" data-ng-controller="LikesController" data-ng-init="find()">
   <span class="columnName">
     <b>Dishes You've Liked</b>
   </span>
   <br>
-  <hr>
+  <hr size="10">
 <p data-ng-repeat="like in likes">
    &hearts; <b>{{like.dishname}}</b>
  </p>
@@ -33,13 +32,12 @@
     <b>Pending Confirmation</b>
   </span>
   <br>
-  <hr>
+  <hr size="10">
   <span id="confirmDish" data-ng-repeat="confirmation in confirmations">
-  <b>&hearts; {{confirmation.dishname}}</b>
+  <b>{{confirmation.dishname}}</b>
   <form ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">Confirm</button>
   </form>
   <p ng-show="confirmation.confirm_status">Confirmed!</p>
-
   </span> <br>
 </div>
 
@@ -51,9 +49,7 @@
   <br>
   <hr>
 <p data-ng-repeat="schedule in schedules">
-
-<b>&hearts; {{schedule.name}}</b> by <b>{{schedule.username}}</b>
-
+{{schedule.name}} by {{schedule.patron_username}}
 
 </p>
 </div>
