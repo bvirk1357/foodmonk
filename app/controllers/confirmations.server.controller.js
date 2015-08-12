@@ -202,6 +202,19 @@ exports.confirm = function(req, res, next){
 			});// NextTick()
 
 			// res.jsonp({'confirmed': 'true'});
+
+			// Confirmation.find({username: req.user.username}).sort('-created').populate('user', 'displayName').exec(function(err, confirmations) {
+			// 		if (err) {
+			// 			console.log('Inside confirmations.server.ctrl.confirm() NOTTT returning confirmations.\n\n');
+			// 			return res.status(400).send({
+			// 				message: errorHandler.getErrorMessage(err)
+			// 			});
+			// 		} else {
+			// 			console.log('Inside confirmations.server.ctrl.confirm() returning confirmations: ' + confirmations + '\n\n');
+			// 			res.jsonp(confirmations);
+			// 		}
+			// 	});
+
 			res.jsonp();
 		}// else ends here
 	});
