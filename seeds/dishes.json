@@ -1,21 +1,57 @@
 [
 
-{"name": "Samosa", "username": "bvirk", "lat": "6.940293", "long": "79.865572", "pic": "Samosa", "description": "Fried or baked pastry with savoury filling", "user_story": "Lived in India for 17 years", "cost": "$10.00", "ingredients": "Potatoes,Oil,Indian Spices", "prep_time": "45 min", "availability": "Saturday 4pm-6pm"},
+  {
+    "name": "Samosa",
+    "username": "bvirk",
+    "lat": "6.940293",
+    "long": "79.865572",
+    "pic": "http://s3.scoopwhoop.com/suk/samosa/2.jpg",
+    "description": "Fried or baked pastry with savoury filling",
+    "user_story": "Lived in India for 17 years",
+    "cost": "$10.00",
+    "ingredients": "Potatoes,Oil,Indian Spices",
+    "prep_time": "45 min",
+    "availability": "Saturday 4pm-6pm"
+  },
 
-{"name": "Crepe", "username": "sungry", "lat": "48.858787", "long": "2.293666", "pic": "Crepe", "description": "very thin pancake, usually made from wheat flour or buckwheat flour", "user_story": "Visits Paris annually", "cost": "$5.00", "ingredients": "Wheat,Egg", "prep_time": "20 min", "availability": "Mornings/Brunch"},
+  {
+    "name": "Crepe",
+    "username": "sungry",
+    "lat": "48.858787",
+    "long": "2.293666",
+    "pic": "http://media1.agfg.com.au/images/recipes/585.jpg",
+    "description": "very thin pancake, usually made from wheat flour or buckwheat flour",
+    "user_story": "Visits Paris annually",
+    "cost": "$5.00",
+    "ingredients": "Wheat,Egg",
+    "prep_time": "20 min",
+    "availability": "Mornings/Brunch"
+  },
 
-{"name": "Dumplings", "username": "dchen101", "lat": "31.227476", "long": "121.476272", "pic": "Dumplings", "description": "food that consists of small pieces of dough wrapped around a filling", "user_story": "Favourite dish growing up", "cost": "$7.50", "ingredients": "Meat of choice, Oil", "prep_time": "1 hour", "availability": "Sunday 10am-2pm"},
+  {
+    "name": "Dumplings",
+    "username": "dchen101",
+    "lat": "31.227476",
+    "long": "121.476272",
+    "pic": "http://untourshanghai.com/updated/wp-content/gallery/hands-on-dumpling-delights/xlb-in-basket.jpg",
+    "description": "food that consists of small pieces of dough wrapped around a filling",
+    "user_story": "Favourite dish growing up",
+    "cost": "$7.50",
+    "ingredients": "Meat of choice, Oil",
+    "prep_time": "1 hour",
+    "availability": "Sunday 10am-2pm"
+  },
 
-{"name": "Mutton Curry", "username": "bvirk", "lat": "30.335638", "long": "76.386089", "pic": "Mutton", "description": "Indian curry dish that is prepared from mutton and vegetables", "user_story": "Recipe earned from dad", "cost": "$15.00", "ingredients": "Mutton,Garlic,Oil,Spices", "prep_time": "2 hours", "availability": "Friday 4pm-7pm, Saturday 4pm-7pm"},
+  {"name": "Mutton Curry", "username": "bvirk", "lat": "30.335638", "long": "76.386089", "pic": "https://thenomadickitchen.files.wordpress.com/2014/06/img_3695-copy.jpg", "description": "Indian curry dish that is prepared from mutton and vegetables", "user_story": "Recipe earned from dad", "cost": "$15.00", "ingredients": "Mutton,Garlic,Oil,Spices", "prep_time": "2 hours", "availability": "Friday 4pm-7pm, Saturday 4pm-7pm"},
 
-{"name": "Kimchi Fried rice", "username": "sungry", "lat": "37.545503", "long": "126.984057", "pic": "Kimchi", "description": "The pride of Korean food", "user_story": "Kimchi master", "cost": "$9.00", "ingredients": "Rice,Kimchi", "prep_time": "30 min", "availability": "M-F 2pm-4pm"},
+  {"name": "Kimchi Fried rice", "username": "sungry", "lat": "37.545503", "long": "126.984057", "pic": "http://cdn2.norecipes.com/wp-content/uploads/2015/01/kimchi-fried-rice-5.jpg?ae258a", "description": "The pride of Korean food", "user_story": "Kimchi master", "cost": "$9.00", "ingredients": "Rice,Kimchi", "prep_time": "30 min", "availability": "M-F 2pm-4pm"},
 
-{"name": "Baozi", "username": "dchen101", "lat": "22.278343", "long": "114.174701", "pic": "Bao", "description": "Type of steamed, filled, bun or bread-like item in various Chinese cuisines", "user_story": "The special occasion food", "cost": "$15.00", "ingredients": "Dough,Meat,Sauce", "prep_time": "2 hours", "availability": "Sunday 12pm-4pm"},
+  {"name": "Baozi", "username": "dchen101", "lat": "22.278343", "long": "114.174701", "pic": "https://smokeytower.files.wordpress.com/2015/06/p733_d20120905175610.jpg", "description": "Type of steamed, filled, bun or bread-like item in various Chinese cuisines", "user_story": "The special occasion food", "cost": "$15.00", "ingredients": "Dough,Meat,Sauce", "prep_time": "2 hours", "availability": "Sunday 12pm-4pm"},
 
-{"name": "Dry-Rub Baby Back Pork Ribs", "username": "bvirk", "lat": "35.143382", "long": "-90.051831", "pic": "Pork Ribs", "description": "Meat gets slapped with a vinegar mop during cooking, followed by a rub applied at the very end. The result is tangy ribs that pack in the full, raw flavor of the rub, making it drastically different from your average recipe", "user_story": "Gotta have these every now and then", "cost": "$30.00", "ingredients": "Pork ribs, Sauce, Spices", "prep_time": "8 hours", "availability": "Saturday 10am-6pm"},
+  {"name": "Dry-Rub Baby Back Pork Ribs", "username": "bvirk", "lat": "35.143382", "long": "-90.051831", "pic": "http://www.allenbrothers.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/0/10104.jpg", "description": "Meat gets slapped with a vinegar mop during cooking, followed by a rub applied at the very end. The result is tangy ribs that pack in the full, raw flavor of the rub, making it drastically different from your average recipe", "user_story": "Gotta have these every now and then", "cost": "$30.00", "ingredients": "Pork ribs, Sauce, Spices", "prep_time": "8 hours", "availability": "Saturday 10am-6pm"},
 
-{"name": "Bulgogi", "username": "sungry", "lat": "35.685726", "long": "139.761251", "pic": "Bulgogi", "description": "Korean dish that usually consists of grilled marinated beef", "user_story": "Beef connoisseur", "cost": "$15.00", "ingredients": "Beef, Sauce", "prep_time": "2 hours", "availability": "Tuesday 6pm-8pm"},
+  {"name": "Bulgogi", "username": "sungry", "lat": "35.685726", "long": "139.761251", "pic": "http://savorysweetlife.com/wp-content/uploads/2009/07/bulgogi1.jpg", "description": "Korean dish that usually consists of grilled marinated beef", "user_story": "Beef connoisseur", "cost": "$15.00", "ingredients": "Beef, Sauce", "prep_time": "2 hours", "availability": "Tuesday 6pm-8pm"},
 
-{"name": "Chicken Noodle Soup", "username": "dchen101", "lat": "10.813675", "long": "106.632702", "pic": "Noodle Soup", "description": "Soup made from chicken, simmered in water, usually with various other ingredients", "user_story": "Perfect sit in dinner for cold winter evenings", "cost": "$7.50", "ingredients": "Chicken, Soya Sauce", "prep_time": "2 hours", "availability": "Saturday 6pm-8pm"}
+  {"name": "Chicken Noodle Soup", "username": "dchen101", "lat": "10.813675", "long": "106.632702", "pic": "http://www.seriouseats.com/images/2014/04/20140411-chicken-egg-noodle-soup-14.jpg", "description": "Soup made from chicken, simmered in water, usually with various other ingredients", "user_story": "Perfect sit in dinner for cold winter evenings", "cost": "$7.50", "ingredients": "Chicken, Soya Sauce", "prep_time": "2 hours", "availability": "Saturday 6pm-8pm"}
 
 ]

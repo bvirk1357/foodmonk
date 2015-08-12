@@ -137,7 +137,7 @@ exports.list = function(req, res) {
  */
 exports.listAll = function(req, res) {
 	console.log('\n\n\nMade it to listAll\n\n');
-	Dish.find({}, {'name': 1, 'lat': 1, 'long': 1}).exec(function(err, allDishes) {
+	Dish.find({}, {'name': 1, 'lat': 1, 'long': 1, 'pic': 1, 'cost': 1, 'description': 1, 'availability': 1}).exec(function(err, allDishes) {
 		if (err) {
 			console.log('Error:' + err );
 			return res.status(400).send({
