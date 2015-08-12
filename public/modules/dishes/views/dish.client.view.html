@@ -1,8 +1,8 @@
 <section data-ng-controller="DishesController" data-ng-init="read()">
-  <div class="page-header">
     <br><br><br>
     <h1>{{dish.name | uppercase}}</h1>
-  </div>
+    <br>
+
   <div class="polaroid">
     <p>{{dish.name}} by {{dish.username}}</p>
     <img src={{dish.pic}}>
@@ -18,7 +18,7 @@
   <b>Cook's Story</b>
   <br>
   {{dish.user_story}}
-        <hr>
+  <br><br>
     <div class="reviews">
     <b>Reviews for dishes</b>
 
@@ -31,6 +31,8 @@
     <form class="form-horizontal" data-ng-submit="create(dish.name, dish._id)" novalidate>
       <div class="form-group">
 <!--         <p><label class="control-label" for="review"><b>Reviews</b></label></p> -->
+<br>
+<hr>
   <p><b>Reviews</b></p>
         <div class="controls">
           <textarea name="review" data-ng-model="review" id="review" class="form-control" cols="20" rows="5" placeholder="Leave Comments or Reviews"></textarea>
