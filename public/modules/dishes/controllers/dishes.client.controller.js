@@ -71,6 +71,9 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
     //     infoWindow.open($scope.objMapa);
     //     activeInfoWindow = infoWindow
     // };
+    $scope.$watch('files', function () {
+      $scope.upload($scope.files);
+    });
 
     $scope.$watch('file', function () {
         if ($scope.file !== null) {
@@ -79,27 +82,30 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
     });
 
     $scope.upload = function (files) {
-    if (files && files.length) {
-        for (var i = 0; i < files.length; i++) {
-            var file = files[i];
-            console.log('This is the file upload: ' + file);
-            Upload.upload({
-                url: '/dishes/image',
-                fields: {
-                    'username': $scope.username
-                },
-                file: file
-            }).progress(function (evt) {
-                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-                $scope.log = 'progress: ' + progressPercentage + '% ' +
-                            evt.config.file.name + '\n' + $scope.log;
-            }).success(function (data, status, headers, config) {
-                // $timeout(function() {
-                //     $scope.log = 'file: ' + config.file.name + ', Response: ' + JSON.stringify(data) + '\n' + $scope.log;
-                // });
-            });
-        }
-    }
+      if (files && files.length) {
+          for (var i = 0; i < files.length; i++) {
+              var file = files[i];
+              // console.log('This is the file upload: ' + file);
+              // console.log('this is upload:' + Upload);
+              // console.log('this is the username: ');
+              // console.log(Upload);
+              Upload.upload({
+                  url: '/dishes/image',
+                  fields: {
+                      'username': $scope.username
+                  },
+                  file: file
+              }).progress(function (evt) {
+                  var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                  $scope.log = 'progress: ' + progressPercentage + '% ' +
+                              evt.config.file.name + '\n' + $scope.log;
+              }).success(function (data, status, headers, config) {
+                  // $timeout(function() {
+                  //     $scope.log = 'file: ' + config.file.name + ', Response: ' + JSON.stringify(data) + '\n' + $scope.log;
+                  // });
+              });
+          }
+      }
     };
 
 	}
