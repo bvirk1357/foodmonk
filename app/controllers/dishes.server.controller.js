@@ -139,7 +139,7 @@ exports.listAll = function(req, res) {
 	console.log('\n\n\nMade it to listAll\n\n');
 	Dish.find({}, {'name': 1, 'lat': 1, 'long': 1}).exec(function(err, allDishes) {
 		if (err) {
-			console.log("Error:" );
+			console.log('Error:' + err );
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
@@ -188,4 +188,17 @@ exports.hasAuthorization = function(req, res, next) {
 		return res.status(403).send('User is not authorized');
 	}
 	next();
+};
+
+
+exports.imageUpload = function(req, res, next){
+	console.log('Made it to image upload server side');
+	var data = _.pick(req.body, 'type')
+		, uploadPath = path.normalize('public/module/dishes/img')
+  	, file = req.files.file;
+
+    console.log(file.name); //original name (ie: sunset.png)
+    console.log(file.path); //tmp path (ie: /tmp/12345-xyaz.png)
+    console.log(uploadPath); //uploads directory: (ie: /home/user/data/uploads)
+
 };

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('dishes').controller('DishesController', ['$scope', '$stateParams', '$location', 'Dishes',
-	function($scope, $stateParams, $location, Dishes) {
+angular.module('dishes').controller('DishesController', ['$scope', '$stateParams', '$location', 'Dishes', 'Upload',
+	function($scope, $stateParams, $location, Upload, Dishes) {
 
 
     $scope.create = function(){
@@ -19,7 +19,7 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
       });
 
       dish.$save(function(response) {
-        console.log("This is the dish id:" + dish._id)
+        console.log('This is the dish id:' + dish._id)
         $location.path('/dishes/'+dish._id);
         //Placeholder for resetting form fields.
       }, function(errorResponse) {
@@ -71,6 +71,36 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
     //     infoWindow.open($scope.objMapa);
     //     activeInfoWindow = infoWindow
     // };
+
+    $scope.$watch('file', function () {
+        if ($scope.file !== null) {
+            $scope.upload([$scope.file]);
+        }
+    });
+
+    $scope.upload = function (files) {
+    if (files && files.length) {
+        for (var i = 0; i < files.length; i++) {
+            var file = files[i];
+            console.log('This is the file upload: ' + file);
+            Upload.upload({
+                url: '/dishes/image',
+                fields: {
+                    'username': $scope.username
+                },
+                file: file
+            }).progress(function (evt) {
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                $scope.log = 'progress: ' + progressPercentage + '% ' +
+                            evt.config.file.name + '\n' + $scope.log;
+            }).success(function (data, status, headers, config) {
+                // $timeout(function() {
+                //     $scope.log = 'file: ' + config.file.name + ', Response: ' + JSON.stringify(data) + '\n' + $scope.log;
+                // });
+            });
+        }
+    }
+    };
 
 	}
 ]);

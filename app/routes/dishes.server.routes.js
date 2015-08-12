@@ -17,6 +17,9 @@ module.exports = function(app) {
 	app.route('/alldishes')
 		.get(dishes.listAll);
 
+	app.route('/dishes/image')
+		.post(dishes.imageUpload);
+
 	// Finish by binding the Dish middleware
 	app.param('dishId', dishes.dishByID);
 };

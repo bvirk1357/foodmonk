@@ -62,7 +62,7 @@ angular.module('confirmations').controller('ConfirmationsController', ['$scope',
 		// Find a list of Confirmations
 		$scope.find = function() {
 			$scope.confirmations = Confirmations.query();
-			console.log('confirmations.client.ctrl.find(): confirmations: ' + $scope.confirmations)
+			console.log('confirmations.client.ctrl.find(): confirmations: ' + $scope.confirmations);
 		};
 
 		// Find existing Confirmation

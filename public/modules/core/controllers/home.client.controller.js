@@ -22,7 +22,7 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       $scope.objMapa = map;
     });
 
-    var activeInfoWindow = 0
+    var activeInfoWindow = 0;
     $scope.showInfowindow = function(event, p) {
       var image = 'http://png.clipart.me/graphics/thumbs/200/buddhist-monk-cartoon-illustration_200890463.jpg';
       if (activeInfoWindow !== 0){
@@ -43,7 +43,7 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 
       infoWindow.setPosition(center);
       infoWindow.open($scope.objMapa);
-      activeInfoWindow = infoWindow
+      activeInfoWindow = infoWindow;
     };
 
 	}

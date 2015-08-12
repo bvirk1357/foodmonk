@@ -63,10 +63,10 @@
 	<!--Application JavaScript Files-->
 	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %}
 
-	{% if process.env.NODE_ENV === 'development' %}
-	<!--Livereload script rendered -->
-	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
-	{% endif %}
+	<script type="text/javascript" src="lib/angular(.min).js"></script>
+	<script type="text/javascript" src="lib/ng-file-upload-shim/ng-file-upload-shim.js"></script>
+	<script type="text/javascript" src="lib/ng-file-upload/ng-file-upload.js"></script>
+
 </body>
 
 </html>
