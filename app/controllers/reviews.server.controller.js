@@ -77,12 +77,16 @@ exports.delete = function(req, res) {
  * List of Reviews
  */
 exports.list = function(req, res) {
-	Review.find().sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
+	console.log('Inside reviews.server.list, req.body.dishname: ' + req.body.dishname + ', req.body.username: ' + req.body.username + '.');
+
+	Review.find({dishname: req.body.dishname}).sort('-created').populate('user', 'displayName').exec(function(err, reviews) {
 		if (err) {
+			console.log('\nReview failed\n');
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			console.log('\nReview listed\n');
 			res.jsonp(reviews);
 		}
 	});

@@ -6,6 +6,7 @@
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
 	Dish = mongoose.model('Dish'),
+	Review = mongoose.model('Review'),
 	_ = require('lodash');
 
 /**
@@ -160,8 +161,21 @@ exports.dishByID = function(req, res, next, id) {
 		}
 		// req.dish = dish;
 		console.log('\ndish: ' + dish + '\n');
+		Review.find({dishname: dish.name}).exec(function(err, reviews) {
+			console.log('reviews:' + reviews);
+			if (err) {
+
+				return res.status(400).send({
+					message: errorHandler.getErrorMessage(err)
+				});
+			} else {
+				console.log('success:');
+				// dish.reviews=reviews;
+				res.jsonp({dish: dish, reviews: reviews});
+			}
+		});
 		// next();
-		res.jsonp(dish);
+		// res.jsonp({dish: dish, reviews: reviews});
 	});
 };
 
