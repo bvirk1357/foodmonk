@@ -50,18 +50,25 @@ img {
   text-align: center;
   width: 100%;
   bottom: 0px;
-  font: georgia;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+   font-weight: 300;
   color: #888;
 }
 
 b {
   font-size: 18px;
+  text-align: center;
+  color: Black;
+}
+
+.columnName b{
+  text-align: center;
 }
 
 .storyBox {
   width: 70%;
   height: 40%;
-  border:5px solid tomato;
+  border:3px solid black;
   /*line-height: 300px;*/
 }
 
@@ -70,8 +77,7 @@ b {
 }*/
 
 map {
-    border-top: 3px solid black;
-    border-left: 3px solid black;
+  border: 3px solid black;
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#000), to(transparent));
   background-image: -webkit-linear-gradient(#000, transparent);
   background-image:
@@ -87,65 +93,76 @@ map {
   background-size: 3px 100%;
   background-position: 0 0, 100% 0;
   background-repeat: no-repeat;
+  border-radius:10px;
 }
 
 .schedules {
   width: 30%;
-  height: 30%;
+  height: 13em;
   padding: 10px;
-  border:2px solid #000066;
+  border: 2px solid black;
   border-top:2px line #000000;
-  border-bottom:2px solid #000066;
+  border-bottom:2px solid black;
   border-width:2px 2px 2px;
-  border-bottom:2px line #000066;
   border-radius:10px;
 -moz-border-radius:10px;
   margin: 15px;
   float: left;
+  /*background-color: PeachPuff;*/
+  background-image: url(http://goteamgray.com/wp-content/uploads/2012/03/meals_icon.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  opacity: 0.7;
+  background-size: 50px 50px;
 }
 
 .confirmations {
   width: 30%;
-  height: 30%;
-  padding: 10px;
-  border:2px solid #000066;
+  height: 13em;
+  padding: 15px;
+  border:2px solid black;
   border-top:2px line #000000;
-  border-bottom:2px solid #000066;
+  border-bottom:2px solid black;
   border-width:2px 2px 2px;
-  border-bottom:2px line #000066;
   border-radius:10px;
 -moz-border-radius:10px;
   margin: 15px;
   float: left;
+   background-image: url(https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/128/clock.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
+  background-size: 50px 50px;
 }
 
 .likes {
   width: 30%;
-  height: 30%;
-  padding: 10px;
-  border:2px solid #000066;
+  height: 13em;
+  padding: 15px;
+  border:2px solid black;
   border-top:2px line #000000;
-  border-bottom:2px solid #000066;
-  border-width:2px 2px 2px;
-  border-bottom:2px line #000066;
+  border-bottom:2px solid black;
+  border-image-width:3px 3px 3px;
   border-radius:10px;
 -moz-border-radius:10px;
   margin: 15px;
   float: left;
+  /*background-color: PeachPuff;*/
+/*  background-image: url(http://static.iconsplace.com/icons/preview/orange/thumbs-up-256.png);*/
+background-image: url(http://images.clipartpanda.com/white-smiley-face-png-white_heart_suit_u2661_icon_256x256.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.7;
 }
 
 #quote {
-  font-family: georgia;
-  font-size: 1.5em;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
   text-align: center;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
-}
-
-map {
-
 }
 
 #confirmDish {
@@ -177,3 +194,21 @@ map {
   background-image: linear-gradient(to bottom, #de7942, #d98934);
   text-decoration: none;
 }
+
+
+.content {
+   position: relative;
+}
+.content:after {
+    content : "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(http://assets.amishdirectfurni.netdna-cdn.com/wp-content/uploads/2015/06/6947776-wood-plant.jpg);
+    width: 100%;
+    height: 100%;
+    opacity : 0.7;
+    z-index: -1;
+}
+
