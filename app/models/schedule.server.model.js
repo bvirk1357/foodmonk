@@ -17,8 +17,8 @@ var ScheduleSchema = new Schema({
 	},
 	dishname: {
 		type: String,
-		default: '',
-		required: 'Please assign a dish name'
+		default: ''
+		// required: 'Please assign a dish name'
 	},
 	cook_username: {
 		type: String,

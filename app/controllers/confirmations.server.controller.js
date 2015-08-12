@@ -167,7 +167,7 @@ exports.confirm = function(req, res, next){
 
 										console.log('\nCreating schedule with the following properties: dishname: ' + cur_dishname + ', cook_username: ' + cur_dish.username + ', patron_username: ' + confirmations[i].username + ', schedule_date: ' + cur_dish.availability + ', complete_status: ' + false + '.\n\n');
 
-										var new_schedule = new Schedule({dishname: cur_dishname, cook_username: cur_dish.username, patron_username: confirmations[i].username, schedule_date: cur_dish.availability, complete_status: false});
+										var new_schedule = new Schedule({name: cur_dishname, cook_username: cur_dish.username, patron_username: confirmations[i].username, schedule_date: cur_dish.availability, complete_status: false});
 
 										console.log('Created new schedule entry: ' + new_schedule);
 
