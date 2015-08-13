@@ -11,6 +11,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		state('home', {
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html'
+		}).
+
+		state('journey', {
+			url: '/journey',
+			templateUrl: 'modules/core/views/journey.client.view.html'
 		});
 	}
 ]);

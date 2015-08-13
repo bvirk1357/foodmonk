@@ -69,5 +69,34 @@ angular.module('schedules').controller('SchedulesController', ['$scope', '$state
 				scheduleId: $stateParams.scheduleId
 			});
 		};
+
+		$scope.journey = function(){
+      $scope.username = user.username;
+      $scope.journeylatlng = Schedules.query();
+    };
+
+     var activeInfoWindow = 0
+    $scope.showInfowindow = function(event, p) {
+      // var image = 'http://png.clipart.me/graphics/thumbs/200/buddhist-monk-cartoon-illustration_200890463.jpg';
+      if (activeInfoWindow !== 0){
+        activeInfoWindow.close();
+      }
+      // var lat = p.lat + (Math.random()/100);
+      // var lng = parseFloat(p.long) + (Math.random()/100);
+      var infoWindow = new google.maps.InfoWindow();
+      var center = new google.maps.LatLng(p.lat,p.long);
+      console.log(parseFloat(p.long));
+      console.log(p);
+      // infoWindow.setTitle("Title");
+      infoWindow.setContent(
+        '<p><b>' + p.name + '</b></p>' +
+        '<p><img src=' + p.pic + ' height="100" width="100"></p>' +
+        '<p><a href=#!/dishes/' + p._id + '>See details</a><p>'
+        );
+
+      infoWindow.setPosition(center);
+      infoWindow.open($scope.objMapa);
+      activeInfoWindow = infoWindow
+    };
 	}
 ]);
