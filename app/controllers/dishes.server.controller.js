@@ -21,7 +21,7 @@ exports.create = function(req, res) {
 	console.log('req.user:' + req.user);
 	dish.save(function(err) {
 		if (err) {
-			console.log('error');
+			console.log('error' + err);
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
 			});

@@ -179,7 +179,8 @@ map {
 }
 
 #confirmDish {
-  display: inline-block;
+/*  display: inline-block;*/
+  padding-bottom: 30px;
 }
 
 .btn {
@@ -227,6 +228,9 @@ map {
   padding-left: 60px;
 }
 
+.columnName.* {
+  text-align: center;
+}
 
 #likeBtn {
   float: left;

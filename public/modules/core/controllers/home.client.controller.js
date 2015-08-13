@@ -30,7 +30,7 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       // var lat = p.lat + (Math.random()/100);
       // var lng = parseFloat(p.long) + (Math.random()/100);
       var infoWindow = new google.maps.InfoWindow();
-      var center = new google.maps.LatLng(p.lat + 15,p.long);
+      var center = new google.maps.LatLng(p.lat,p.long);
       console.log(parseFloat(p.long));
       console.log(p);
       // infoWindow.setTitle("Title");
@@ -44,6 +44,5 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       infoWindow.open($scope.objMapa);
       activeInfoWindow = infoWindow
     };
-
 	}
 ]);

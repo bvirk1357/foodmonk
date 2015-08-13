@@ -49,19 +49,27 @@ angular.module('confirmations').controller('ConfirmationsController', ['$scope',
 				dishname: dishname, username: username
 			});
 
-			confirmation.$confirm(function() {
-				console.log('confirmations.client.ctrl.update: Confirmed \n');
-				// $location.path('confirmations/' + confirmation._id);
-			}, function(errorResponse) {
-				console.log('error' + errorResponse.data.message);
-				$scope.error = errorResponse.data.message;
-			});
+			confirmation.$confirm();
+
+			console.log('Back from calling Confirmation.$confirm(). Calling $scope.find() now');
+			$scope.find();
+
+			// .then(function(){
+			// 	console.log('\n\nCalling handleEmit.update()\n\n');
+
+			// 	$scope.$emit('handleEmit', {message: 'Confirmed'});
+			// })
+
+			// console.log('\n\nCalling handleEmit.update()\n\n');
+
+			// $scope.$emit('handleEmit', {message: 'Confirmed'});
 
 		};
 
 		// Find a list of Confirmations
 		$scope.find = function() {
 			$scope.confirmations = Confirmations.query();
+			$scope.cur_status = 'BEGIN';
 			console.log('confirmations.client.ctrl.find(): confirmations: ' + $scope.confirmations)
 		};
 

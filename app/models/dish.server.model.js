@@ -15,6 +15,7 @@ var DishSchema = new Schema({
 		required: 'Please fill username',
 		trim: true
 	},
+
 	name: {
 		type: String,
 		default: '',
@@ -27,6 +28,13 @@ var DishSchema = new Schema({
 		type: String,
 		default: '',
 		required: 'Please provide picture',
+		trim: true
+	},
+
+	origin:{
+		type: String,
+		default: '',
+		required: 'Please provide origin',
 		trim: true
 	},
 
@@ -80,14 +88,16 @@ var DishSchema = new Schema({
 		type: Schema.ObjectId,
 		ref: 'User'
 	},
+
 	lat: {
 		type: Number,
 		default: 0
 	},
-	lng: {
+	long: {
 		type: Number,
 		default: 0
 	}
+
 });
 
 mongoose.model('Dish', DishSchema);
