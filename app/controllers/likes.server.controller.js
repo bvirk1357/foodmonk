@@ -66,14 +66,14 @@ exports.create = function(req, res) {
 								});
 							}
 
-							// Also remove the related likes from the users
-							Like.remove({dishname: cur_dishname}, function(err) {
-								if (err) {
-									console.log('Error removing: ' + errorHandler.getErrorMessage(err));
-								} else {
-									console.log('Successfully removed likes');
-								}
-							});
+							// // Also remove the related likes from the users
+							// Like.remove({dishname: cur_dishname}, function(err) {
+							// 	if (err) {
+							// 		console.log('Error removing: ' + errorHandler.getErrorMessage(err));
+							// 	} else {
+							// 		console.log('Successfully removed likes');
+							// 	}
+							// });
 
 						}// if() ends here
 
