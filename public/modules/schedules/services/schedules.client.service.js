@@ -5,7 +5,7 @@ angular.module('schedules').factory('Schedules', ['$resource',
 	function($resource) {
 		return $resource('schedules/:scheduleId', { scheduleId: '@_id'
 		}, {
-	     'get':    {method:'GET'},
+	    'get':    {method:'GET'},
       'save':   {method:'POST'},
       'query':  {method:'GET', isArray:true},
       'remove': {method:'DELETE'},
@@ -13,3 +13,4 @@ angular.module('schedules').factory('Schedules', ['$resource',
 		});
 	}
 ]);
+

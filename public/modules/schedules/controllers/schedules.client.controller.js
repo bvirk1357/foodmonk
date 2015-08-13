@@ -5,6 +5,12 @@ angular.module('schedules').controller('SchedulesController', ['$scope', '$state
 	function($scope, $stateParams, $location, Authentication, Schedules) {
 		$scope.authentication = Authentication;
 
+    $scope.$on('handleBroadcast', function(event, args) {
+    		console.log('\n\nhandleBroadcast recieved.\n\n');
+        $scope.message = 'ONE: ' + args.message;
+        $scope.find();
+    });
+
 		// Create new Schedule
 		$scope.create = function() {
 			// Create new Schedule object

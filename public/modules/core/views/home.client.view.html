@@ -31,15 +31,17 @@
 
 <div class="confirmations" data-ng-controller="ConfirmationsController" data-ng-init="find()">
   <span class="columnName">
-    <b>Pending Confirmation</b>
+    <b id="confirmationHeading">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pending Confirmation</b>
   </span>
   <hr size="10">
-  <span id="confirmDish" data-ng-repeat="confirmation in confirmations">
-  <b>{{confirmation.dishname}}</b>
-  <form class="confirmForm"ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">  Confirm</button>
-  </form>
-  <p ng-show="confirmation.confirm_status">Confirmed!</p>
-  </span> <br>
+  <div id="confirmDish" data-ng-repeat="confirmation in confirmations">
+    <b style="text-align: left;">{{confirmation.dishname}}</b>
+    <form class="confirmForm"ng-hide="confirmation.confirm_status" ng-submit="update(confirmation.dishname, confirmation.username)"><button class="btn" input type="submit" value="Confirm">  Confirm</button>
+    </form>
+    <span ng-show="confirmation.confirm_status">Confirmed!</span>
+    <br>
+  </div> <br>
+
 </div>
 
 

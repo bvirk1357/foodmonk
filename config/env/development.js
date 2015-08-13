@@ -2,6 +2,7 @@
 
 module.exports = {
 	db: 'mongodb://localhost/foodmonk-dev',
+	// db: 'mongodb://heroku_z4nprw8j:krn69cn1rcmi9tu77pt056pv9f@ds031903.mongolab.com:31903/heroku_z4nprw8j',
 	app: {
 		title: 'foodmonk - Development Environment'
 	},
