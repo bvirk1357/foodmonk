@@ -17,6 +17,8 @@ module.exports = function(app) {
 	app.route('/alldishes')
 		.get(dishes.listAll);
 
+
+
 	// Finish by binding the Dish middleware
 	app.param('dishId', dishes.dishByID);
 };

@@ -100,6 +100,7 @@ exports.scheduleByID = function(req, res, next, id) {
 	});
 };
 
+
 /**
  * Schedule authorization middleware
  */
