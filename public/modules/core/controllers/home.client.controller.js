@@ -19,9 +19,14 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
       $location.path('dishes/'+ i._id);
     };
 
+
+
     $scope.$on('mapInitialized', function (event, map) {
       $scope.objMapa = map;
     });
+
+
+
 
     var activeInfoWindow = 0
     $scope.showInfowindow = function(event, p) {

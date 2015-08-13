@@ -1,0 +1,16 @@
+<section data-ng-controller="SchedulesController" data-ng-init="find()">
+  <br><br><br>
+    <p><a class="btn" ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a></p>
+<!--     <p><a class="btn" data-ng-href="#!/journey"> Your Journey </a></p> -->
+  <!-- Add a link to create a dish here -->
+  <p id="quote"> <b>"The journey of a thousand miles begins with a single bite."</b></p>
+  <br>
+    <map center="[14.506726, 5]" zoom ='2' style="height: 500px">
+      <marker position="[37.784840, -122.397424]" visible="true" icon="http://i.imgur.com/ATrfpWa.png"></marker>
+
+      <marker ng-repeat='latlng in schedules' position='[{{latlng.lat}},{{latlng.lng}}]' visible="true" on-click="showInfowindow(event, latlng)" icon="http://i.imgur.com/uOaTaj4.png" animation="Animation.DROP")>
+
+      </marker>
+    </map>
+</section>
+
