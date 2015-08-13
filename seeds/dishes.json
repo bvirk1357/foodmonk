@@ -51,7 +51,6 @@
   {"name": "Dry-Rub Baby Back Pork Ribs", "username": "bvirk", "lat": "35.143382", "long": "-90.051831", "pic": "http://www.allenbrothers.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/1/0/10104.jpg", "description": "Meat gets slapped with a vinegar mop during cooking, followed by a rub applied at the very end. The result is tangy ribs that pack in the full, raw flavor of the rub, making it drastically different from your average recipe", "user_story": "Gotta have these every now and then", "cost": "$30.00", "ingredients": "Pork ribs, Sauce, Spices", "prep_time": "8 hours", "availability": "Saturday 10am-6pm"},
 
   {"name": "Bulgogi", "username": "sungry", "lat": "35.685726", "long": "139.761251", "pic": "http://savorysweetlife.com/wp-content/uploads/2009/07/bulgogi1.jpg", "description": "Korean dish that usually consists of grilled marinated beef", "user_story": "Beef connoisseur", "cost": "$15.00", "ingredients": "Beef, Sauce", "prep_time": "2 hours", "availability": "Tuesday 6pm-8pm"},
-
   {"name": "Chicken Noodle Soup", "username": "dchen101", "lat": "10.813675", "long": "106.632702", "pic": "http://www.seriouseats.com/images/2014/04/20140411-chicken-egg-noodle-soup-14.jpg", "description": "Soup made from chicken, simmered in water, usually with various other ingredients", "user_story": "Perfect sit in dinner for cold winter evenings", "cost": "$7.50", "ingredients": "Chicken, Soya Sauce", "prep_time": "2 hours", "availability": "Saturday 6pm-8pm"}
 
 ]

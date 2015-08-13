@@ -117,6 +117,8 @@ map {
   opacity: 0.7;
   background-size: 120px 100px;
   text-align: center;
+  background-color:#BDD09F;
+  opacity:0.7;
 }
 
 .confirmations {
@@ -136,8 +138,10 @@ map {
   background-position: center;
   opacity: 0.7;
   background-size: 70px 70px;*/
-  /*text-align: center;*/
-  color:#27408B;
+  text-align: center;
+  background-color:#DBCA69;
+  opacity:0.7;
+  font-family: georgia;
 }
 
 .likes {
@@ -160,6 +164,8 @@ map {
   opacity: 0.7;
   background-size: 120px 90px;
   text-align: center;
+  background-color:#B99C6B;
+  opacity:0.7;
 }
 
 #quote {
