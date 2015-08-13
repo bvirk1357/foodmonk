@@ -2,8 +2,8 @@
 <section data-ng-controller="HomeController" data-ng-init="initiatePin()">
 
   <br><br><br>
-    <p><a class="btn" ng-show = "usertype[0] == 'cook'" data-ng-href="#!/dishes/create"> Create a Dish </a></p>
-    <p><a class="btn" ng-show = "usertype[0] == 'patron'" data-ng-href="#!/journey"> Your Journey </a></p>
+    <a class="btn" data-ng-href="#!/dishes/create"> Create a Dish </a>
+    <a class="btn" data-ng-href="#!/journey"> Your Journey </a>
   <!-- Add a link to create a dish here -->
   <p id="quote"> <b>"The journey of a thousand miles begins with a single bite."</b></p>
   <br>
@@ -53,7 +53,7 @@
   <br>
   <hr>
 <p data-ng-repeat="schedule in schedules">
-<b>{{schedule.name}}</b> by <b>{{schedule.patron_username}}</b>
+<b>{{schedule.name}}</b>
 
 </p>
 </div>
