@@ -4,12 +4,14 @@ angular.module('core').controller('HomeController', ['$scope', '$location', 'Aut
 	function($scope, $location, Authentication, HomeService) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
-
+    $scope.loading = true;
     $scope.initiatePin = function(){
-      $scope.usertype = user.usertype;
+      $scope.usertype = ['cook'];
       $scope.disheslatlng = HomeService.query();
       console.log('Dish location:' + $scope.disheslatlng);
     };
+
+
 
     //marker link
     $scope.gotolink= function(event,i) {
