@@ -63,6 +63,12 @@ angular.module('dishes').controller('DishesController', ['$scope', '$stateParams
         console.log('This is the read rbody: ' + response.body);
         $scope.dish = response.dish;
         $scope.reviews = response.reviews;
+
+        // Set gravatar URL for the cook
+        var email_hash = CryptoJS.MD5('bikram.virk@gmail.com'); //response.cook_email);
+        $scope.gravatar_url = '//www.gravatar.com/avatar/' + email_hash + '.jpg';
+        console.log('gravatar url: ' + $scope.gravatar_url + '.\n');
+
       }, function(errorResponse) {
         $scope.error = errorResponse.data.message;
       });
